@@ -7,8 +7,8 @@
 //
 
 #import "UIScrollView+XXBRefresh.h"
-#import "XXBRefreshBaseView.h"
 #import "XXBRefreshHeaderView.h"
+#import "XXBRefreshFooterView.h"
 #import <objc/runtime.h>
 
 @interface UIScrollView ()
@@ -54,18 +54,6 @@ static char XXBRefreshFooterViewKey;
  *  @param action 回调方法
  */
 - (void)addHeaderWithTarget:(id)target action:(SEL)action {
-    
-    [self addHeaderWithTarget:target action:action dateKey:nil];
-}
-
-/**
- *  添加一个下拉刷新头部控件
- *
- *  @param target 目标
- *  @param action 回调方法
- *  @param dateKey 刷新时间保存的key值
- */
-- (void)addHeaderWithTarget:(id)target action:(SEL)action dateKey:(NSString*)dateKey {
     if(self.header == nil) {
         XXBRefreshHeaderView *refreshHeaderView = [XXBRefreshHeaderView headerView];
         [self addSubview:refreshHeaderView];
@@ -95,5 +83,43 @@ static char XXBRefreshFooterViewKey;
  */
 - (void)headerEndRefreshing {
     [self.header endRefreshing];
+}
+
+/**
+ *  添加一个上拉刷新尾部控件
+ *
+ *  @param target 目标
+ *  @param action 回调方法
+ */
+- (void)addFooterWithTarget:(id)target action:(SEL)action {
+    if(self.footer == nil) {
+        XXBRefreshFooterView *refreshFooterView = [XXBRefreshFooterView footerView];
+        [self addSubview:refreshFooterView];
+        self.footer = refreshFooterView;
+    }
+    self.footer.beginRefreshingTaget = target;
+    self.footer.beginRefreshingAction = action;
+}
+
+/**
+ *  移除上拉刷新尾部控件
+ */
+- (void)removeFooter {
+    [self.footer removeFromSuperview];
+    self.footer = nil;
+}
+
+/**
+ *  主动让上拉刷新尾部控件进入刷新状态
+ */
+- (void)footerBeginRefreshing {
+    [self.footer beginRefreshing];
+}
+
+/**
+ *  让上拉刷新尾部控件停止刷新状态
+ */
+- (void)footerEndRefreshing {
+    [self.footer endRefreshing];
 }
 @end

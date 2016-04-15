@@ -7,6 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "XXBRefreshConsts.h"
+#import "UIView+XXBExtension.h"
+#import "UIScrollView+XXBExtension.h"
 
 typedef enum {
     XXBRefreshStateDefault,         //默认状态
@@ -37,6 +40,14 @@ typedef enum {
  *  是否正在刷新
  */
 @property (nonatomic, readonly, getter=isRefreshing) BOOL   refreshing;
+
+
+/**
+ *  是否允许刷新空间和scrollview之间有间隔(默认不允许）
+ *  ps：tableView的cell个数比较少但是依然想要上拉加载更多的时候为了避免footer紧挨着最后的一个cell 
+ *  可以将这个属性设置YES
+ */
+@property(nonatomic , assign) BOOL                          allowContentInset;
 
 @property (nonatomic, weak, readonly) UIScrollView          *scrollView;
 @property (nonatomic, assign, readonly) UIEdgeInsets        scrollViewOriginalInset;

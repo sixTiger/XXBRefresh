@@ -44,7 +44,7 @@
     if (newSuperview) { // 新的父控件
         
         [newSuperview addObserver:self forKeyPath:XXBRefreshContentOffset options:NSKeyValueObservingOptionNew context:nil];
-        
+        self.xxb_x = 0;
         self.xxb_width = newSuperview.xxb_width;
         _scrollView = (UIScrollView *)newSuperview;
         _scrollViewOriginalInset = _scrollView.contentInset;
@@ -88,12 +88,12 @@
     if (_refreshState == refreshState) {
         return;
     }
+    _refreshState = refreshState;
     
-    if (_refreshState != XXBRefreshStateRefreshing) {
+    if (_refreshState == XXBRefreshStateRefreshing) {
         _scrollViewOriginalInset = self.scrollView.contentInset;
     }
     
-    _refreshState = refreshState;
     switch (refreshState) {
         case XXBRefreshStateDefault: {
             break;

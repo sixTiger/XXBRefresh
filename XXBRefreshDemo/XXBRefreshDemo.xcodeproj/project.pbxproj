@@ -19,6 +19,7 @@
 		629DB4F21CC0C3C100EC7FE1 /* UIView+XXBExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 629DB4F11CC0C3C100EC7FE1 /* UIView+XXBExtension.m */; };
 		629DB4F51CC0C57000EC7FE1 /* UIScrollView+XXBExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 629DB4F41CC0C57000EC7FE1 /* UIScrollView+XXBExtension.m */; };
 		629DB4FB1CC0D14000EC7FE1 /* XXBRefreshHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 629DB4FA1CC0D14000EC7FE1 /* XXBRefreshHeaderView.m */; };
+		629DB4FE1CC0E4E300EC7FE1 /* XXBRefreshFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 629DB4FD1CC0E4E300EC7FE1 /* XXBRefreshFooterView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,8 @@
 		629DB4F61CC0C7FC00EC7FE1 /* XXBRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XXBRefresh.h; sourceTree = "<group>"; };
 		629DB4F91CC0D14000EC7FE1 /* XXBRefreshHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XXBRefreshHeaderView.h; sourceTree = "<group>"; };
 		629DB4FA1CC0D14000EC7FE1 /* XXBRefreshHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XXBRefreshHeaderView.m; sourceTree = "<group>"; };
+		629DB4FC1CC0E4E300EC7FE1 /* XXBRefreshFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XXBRefreshFooterView.h; sourceTree = "<group>"; };
+		629DB4FD1CC0E4E300EC7FE1 /* XXBRefreshFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XXBRefreshFooterView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +151,8 @@
 				629DB4E81CC0AFC100EC7FE1 /* XXBRefreshBaseView.m */,
 				629DB4F91CC0D14000EC7FE1 /* XXBRefreshHeaderView.h */,
 				629DB4FA1CC0D14000EC7FE1 /* XXBRefreshHeaderView.m */,
+				629DB4FC1CC0E4E300EC7FE1 /* XXBRefreshFooterView.h */,
+				629DB4FD1CC0E4E300EC7FE1 /* XXBRefreshFooterView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -224,6 +229,7 @@
 			files = (
 				629DB4F51CC0C57000EC7FE1 /* UIScrollView+XXBExtension.m in Sources */,
 				629DB4EF1CC0C2CA00EC7FE1 /* XXBRefreshConsts.m in Sources */,
+				629DB4FE1CC0E4E300EC7FE1 /* XXBRefreshFooterView.m in Sources */,
 				629DB4CD1CC090B800EC7FE1 /* ViewController.m in Sources */,
 				629DB4EC1CC0B76400EC7FE1 /* UIScrollView+XXBRefresh.m in Sources */,
 				629DB4FB1CC0D14000EC7FE1 /* XXBRefreshHeaderView.m in Sources */,

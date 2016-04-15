@@ -10,7 +10,7 @@
 @class XXBRefreshBaseView;
 
 @interface UIScrollView (XXBRefresh)
-
+#pragma mark - 下拉刷新
 /**
  *  添加一个下拉刷新头部控件
  *
@@ -18,15 +18,6 @@
  *  @param action 回调方法
  */
 - (void)addHeaderWithTarget:(id)target action:(SEL)action;
-
-/**
- *  添加一个下拉刷新头部控件
- *
- *  @param target 目标
- *  @param action 回调方法
- *  @param dateKey 刷新时间保存的key值
- */
-- (void)addHeaderWithTarget:(id)target action:(SEL)action dateKey:(NSString*)dateKey;
 
 /**
  *  移除下拉刷新头部控件
@@ -42,5 +33,31 @@
  *  让下拉刷新头部控件停止刷新状态
  */
 - (void)headerEndRefreshing;
+
+
+#pragma mark - 上拉加载更多
+
+/**
+ *  添加一个上拉刷新尾部控件
+ *
+ *  @param target 目标
+ *  @param action 回调方法
+ */
+- (void)addFooterWithTarget:(id)target action:(SEL)action;
+
+/**
+ *  移除上拉刷新尾部控件
+ */
+- (void)removeFooter;
+
+/**
+ *  主动让上拉刷新尾部控件进入刷新状态
+ */
+- (void)footerBeginRefreshing;
+
+/**
+ *  让上拉刷新尾部控件停止刷新状态
+ */
+- (void)footerEndRefreshing;
 
 @end

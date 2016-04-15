@@ -42,7 +42,9 @@
     _tableView.rowHeight = 80;
     _tableView.delegate = self;
     _tableView.dataSource = self;
-    [_tableView addHeaderWithTarget:self action:@selector(headerFefresh)];
+//    _tableView.contentInset = UIEdgeInsetsMake(150, 0, 0, 0);
+    [_tableView addHeaderWithTarget:self action:@selector(headerRefresh)];
+    [_tableView addFooterWithTarget:self action:@selector(footerRefresh)];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -57,10 +59,16 @@
     return self.dataSouceArray.count;
 }
 
-- (void)headerFefresh {
+- (void)headerRefresh {
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self.tableView headerEndRefreshing];
     });
     NSLog(@"下拉刷新了");
+}
+- (void)footerRefresh {
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self.tableView footerEndRefreshing];
+    });
+    NSLog(@"上拉加载更多了");
 }
 @end
