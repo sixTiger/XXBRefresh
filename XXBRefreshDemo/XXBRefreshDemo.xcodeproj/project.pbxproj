@@ -13,6 +13,12 @@
 		629DB4D01CC090B800EC7FE1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 629DB4CE1CC090B800EC7FE1 /* Main.storyboard */; };
 		629DB4D21CC090B800EC7FE1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 629DB4D11CC090B800EC7FE1 /* Assets.xcassets */; };
 		629DB4D51CC090B800EC7FE1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 629DB4D31CC090B800EC7FE1 /* LaunchScreen.storyboard */; };
+		629DB4E91CC0AFC100EC7FE1 /* XXBRefreshBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 629DB4E81CC0AFC100EC7FE1 /* XXBRefreshBaseView.m */; };
+		629DB4EC1CC0B76400EC7FE1 /* UIScrollView+XXBRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 629DB4EB1CC0B76400EC7FE1 /* UIScrollView+XXBRefresh.m */; };
+		629DB4EF1CC0C2CA00EC7FE1 /* XXBRefreshConsts.m in Sources */ = {isa = PBXBuildFile; fileRef = 629DB4EE1CC0C2CA00EC7FE1 /* XXBRefreshConsts.m */; };
+		629DB4F21CC0C3C100EC7FE1 /* UIView+XXBExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 629DB4F11CC0C3C100EC7FE1 /* UIView+XXBExtension.m */; };
+		629DB4F51CC0C57000EC7FE1 /* UIScrollView+XXBExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 629DB4F41CC0C57000EC7FE1 /* UIScrollView+XXBExtension.m */; };
+		629DB4FB1CC0D14000EC7FE1 /* XXBRefreshHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 629DB4FA1CC0D14000EC7FE1 /* XXBRefreshHeaderView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +32,19 @@
 		629DB4D11CC090B800EC7FE1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		629DB4D41CC090B800EC7FE1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		629DB4D61CC090B800EC7FE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		629DB4E71CC0AFC100EC7FE1 /* XXBRefreshBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XXBRefreshBaseView.h; sourceTree = "<group>"; };
+		629DB4E81CC0AFC100EC7FE1 /* XXBRefreshBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XXBRefreshBaseView.m; sourceTree = "<group>"; };
+		629DB4EA1CC0B76400EC7FE1 /* UIScrollView+XXBRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+XXBRefresh.h"; sourceTree = "<group>"; };
+		629DB4EB1CC0B76400EC7FE1 /* UIScrollView+XXBRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+XXBRefresh.m"; sourceTree = "<group>"; };
+		629DB4ED1CC0C2CA00EC7FE1 /* XXBRefreshConsts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XXBRefreshConsts.h; sourceTree = "<group>"; };
+		629DB4EE1CC0C2CA00EC7FE1 /* XXBRefreshConsts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XXBRefreshConsts.m; sourceTree = "<group>"; };
+		629DB4F01CC0C3C100EC7FE1 /* UIView+XXBExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+XXBExtension.h"; sourceTree = "<group>"; };
+		629DB4F11CC0C3C100EC7FE1 /* UIView+XXBExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+XXBExtension.m"; sourceTree = "<group>"; };
+		629DB4F31CC0C57000EC7FE1 /* UIScrollView+XXBExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+XXBExtension.h"; sourceTree = "<group>"; };
+		629DB4F41CC0C57000EC7FE1 /* UIScrollView+XXBExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+XXBExtension.m"; sourceTree = "<group>"; };
+		629DB4F61CC0C7FC00EC7FE1 /* XXBRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XXBRefresh.h; sourceTree = "<group>"; };
+		629DB4F91CC0D14000EC7FE1 /* XXBRefreshHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XXBRefreshHeaderView.h; sourceTree = "<group>"; };
+		629DB4FA1CC0D14000EC7FE1 /* XXBRefreshHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XXBRefreshHeaderView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +106,7 @@
 				629DB4DE1CC0977000EC7FE1 /* Model */,
 				629DB4DF1CC0977000EC7FE1 /* Others */,
 				629DB4E01CC0977000EC7FE1 /* View */,
+				629DB4F61CC0C7FC00EC7FE1 /* XXBRefresh.h */,
 			);
 			name = XXBRefresh;
 			path = ../XXBRefresh;
@@ -109,6 +129,14 @@
 		629DB4DF1CC0977000EC7FE1 /* Others */ = {
 			isa = PBXGroup;
 			children = (
+				629DB4EA1CC0B76400EC7FE1 /* UIScrollView+XXBRefresh.h */,
+				629DB4EB1CC0B76400EC7FE1 /* UIScrollView+XXBRefresh.m */,
+				629DB4ED1CC0C2CA00EC7FE1 /* XXBRefreshConsts.h */,
+				629DB4EE1CC0C2CA00EC7FE1 /* XXBRefreshConsts.m */,
+				629DB4F01CC0C3C100EC7FE1 /* UIView+XXBExtension.h */,
+				629DB4F11CC0C3C100EC7FE1 /* UIView+XXBExtension.m */,
+				629DB4F31CC0C57000EC7FE1 /* UIScrollView+XXBExtension.h */,
+				629DB4F41CC0C57000EC7FE1 /* UIScrollView+XXBExtension.m */,
 			);
 			path = Others;
 			sourceTree = "<group>";
@@ -116,6 +144,10 @@
 		629DB4E01CC0977000EC7FE1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				629DB4E71CC0AFC100EC7FE1 /* XXBRefreshBaseView.h */,
+				629DB4E81CC0AFC100EC7FE1 /* XXBRefreshBaseView.m */,
+				629DB4F91CC0D14000EC7FE1 /* XXBRefreshHeaderView.h */,
+				629DB4FA1CC0D14000EC7FE1 /* XXBRefreshHeaderView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -190,9 +222,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				629DB4F51CC0C57000EC7FE1 /* UIScrollView+XXBExtension.m in Sources */,
+				629DB4EF1CC0C2CA00EC7FE1 /* XXBRefreshConsts.m in Sources */,
 				629DB4CD1CC090B800EC7FE1 /* ViewController.m in Sources */,
+				629DB4EC1CC0B76400EC7FE1 /* UIScrollView+XXBRefresh.m in Sources */,
+				629DB4FB1CC0D14000EC7FE1 /* XXBRefreshHeaderView.m in Sources */,
 				629DB4CA1CC090B800EC7FE1 /* AppDelegate.m in Sources */,
+				629DB4E91CC0AFC100EC7FE1 /* XXBRefreshBaseView.m in Sources */,
 				629DB4C71CC090B800EC7FE1 /* main.m in Sources */,
+				629DB4F21CC0C3C100EC7FE1 /* UIView+XXBExtension.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,6 +343,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = XXBRefreshDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xiaoxiaobing.XXBRefreshDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -316,6 +355,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = XXBRefreshDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xiaoxiaobing.XXBRefreshDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
