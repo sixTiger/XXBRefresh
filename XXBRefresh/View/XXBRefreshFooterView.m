@@ -33,8 +33,6 @@
 
 - (void)_init {
     
-    self.backgroundColor = [UIColor redColor];
-    self.allowContentInset = YES;
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context {
