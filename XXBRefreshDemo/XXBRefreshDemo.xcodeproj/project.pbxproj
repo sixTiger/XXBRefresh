@@ -105,28 +105,12 @@
 		629DB4DC1CC0977000EC7FE1 /* XXBRefresh */ = {
 			isa = PBXGroup;
 			children = (
-				629DB4DD1CC0977000EC7FE1 /* Controller */,
-				629DB4DE1CC0977000EC7FE1 /* Model */,
 				629DB4DF1CC0977000EC7FE1 /* Others */,
 				629DB4E01CC0977000EC7FE1 /* View */,
 				629DB4F61CC0C7FC00EC7FE1 /* XXBRefresh.h */,
 			);
 			name = XXBRefresh;
 			path = ../XXBRefresh;
-			sourceTree = "<group>";
-		};
-		629DB4DD1CC0977000EC7FE1 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		629DB4DE1CC0977000EC7FE1 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		629DB4DF1CC0977000EC7FE1 /* Others */ = {
