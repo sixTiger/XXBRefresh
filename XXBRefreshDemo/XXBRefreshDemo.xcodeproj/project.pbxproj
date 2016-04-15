@@ -42,6 +42,7 @@
 		629DB4B91CC090B800EC7FE1 = {
 			isa = PBXGroup;
 			children = (
+				629DB4DC1CC0977000EC7FE1 /* XXBRefresh */,
 				629DB4C41CC090B800EC7FE1 /* XXBRefreshDemo */,
 				629DB4C31CC090B800EC7FE1 /* Products */,
 			);
@@ -77,6 +78,46 @@
 				629DB4C61CC090B800EC7FE1 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		629DB4DC1CC0977000EC7FE1 /* XXBRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				629DB4DD1CC0977000EC7FE1 /* Controller */,
+				629DB4DE1CC0977000EC7FE1 /* Model */,
+				629DB4DF1CC0977000EC7FE1 /* Others */,
+				629DB4E01CC0977000EC7FE1 /* View */,
+			);
+			name = XXBRefresh;
+			path = ../XXBRefresh;
+			sourceTree = "<group>";
+		};
+		629DB4DD1CC0977000EC7FE1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		629DB4DE1CC0977000EC7FE1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		629DB4DF1CC0977000EC7FE1 /* Others */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Others;
+			sourceTree = "<group>";
+		};
+		629DB4E01CC0977000EC7FE1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -300,6 +341,7 @@
 				629DB4DB1CC090B800EC7FE1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

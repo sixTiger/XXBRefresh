@@ -9,7 +9,7 @@
 #import "ViewController.h"
 
 @interface ViewController ()
-
+@property(nonatomic , strong) UITableView   *tableView;
 @end
 
 @implementation ViewController
@@ -17,6 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    [self _creatTableView];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -24,4 +25,10 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void) _creatTableView {
+    _tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
+    [self.view addSubview:_tableView];
+    _tableView.delegate = self;
+    _tableView.dataSource = self;
+}
 @end
