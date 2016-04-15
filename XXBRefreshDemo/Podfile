@@ -5,5 +5,6 @@
 
 target 'XXBRefreshDemo' do
 pod 'XXBRefresh', :path => '../'
+pod 'XXBLibs', :git => "https://github.com/sixTiger/XXBLibs"
 end
 

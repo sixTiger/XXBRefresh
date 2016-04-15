@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>XXBLibs.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>XXBRefresh.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -17,12 +22,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>2FBE3CCFC00F1D8D861E6F3F6B642BF0</key>
+		<key>81001D8C0879DFC4663E1B90B85F31FC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F3070FEC68B9B26492DD7C5BDC1E0C3D</key>
+		<key>DAEE6100FAFA7BEB944EF4D68D97FF34</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DCE0BCFF620DA90DB817F60AD7A01CC4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
