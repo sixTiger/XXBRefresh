@@ -13,16 +13,11 @@
 		629DB4D01CC090B800EC7FE1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 629DB4CE1CC090B800EC7FE1 /* Main.storyboard */; };
 		629DB4D21CC090B800EC7FE1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 629DB4D11CC090B800EC7FE1 /* Assets.xcassets */; };
 		629DB4D51CC090B800EC7FE1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 629DB4D31CC090B800EC7FE1 /* LaunchScreen.storyboard */; };
-		629DB4E91CC0AFC100EC7FE1 /* XXBRefreshBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 629DB4E81CC0AFC100EC7FE1 /* XXBRefreshBaseView.m */; };
-		629DB4EC1CC0B76400EC7FE1 /* UIScrollView+XXBRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 629DB4EB1CC0B76400EC7FE1 /* UIScrollView+XXBRefresh.m */; };
-		629DB4EF1CC0C2CA00EC7FE1 /* XXBRefreshConsts.m in Sources */ = {isa = PBXBuildFile; fileRef = 629DB4EE1CC0C2CA00EC7FE1 /* XXBRefreshConsts.m */; };
-		629DB4F21CC0C3C100EC7FE1 /* UIView+XXBExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 629DB4F11CC0C3C100EC7FE1 /* UIView+XXBExtension.m */; };
-		629DB4F51CC0C57000EC7FE1 /* UIScrollView+XXBExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 629DB4F41CC0C57000EC7FE1 /* UIScrollView+XXBExtension.m */; };
-		629DB4FB1CC0D14000EC7FE1 /* XXBRefreshHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 629DB4FA1CC0D14000EC7FE1 /* XXBRefreshHeaderView.m */; };
-		629DB4FE1CC0E4E300EC7FE1 /* XXBRefreshFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 629DB4FD1CC0E4E300EC7FE1 /* XXBRefreshFooterView.m */; };
+		9AA6830E1F5DAB9D6EA2BAA7 /* libPods-XXBRefreshDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B8E2DF3371147E98BEF2B831 /* libPods-XXBRefreshDemo.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		55356E7A70C1195237CCCBBD /* Pods-XXBRefreshDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XXBRefreshDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-XXBRefreshDemo/Pods-XXBRefreshDemo.release.xcconfig"; sourceTree = "<group>"; };
 		629DB4C21CC090B800EC7FE1 /* XXBRefreshDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XXBRefreshDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		629DB4C61CC090B800EC7FE1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		629DB4C81CC090B800EC7FE1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -33,21 +28,8 @@
 		629DB4D11CC090B800EC7FE1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		629DB4D41CC090B800EC7FE1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		629DB4D61CC090B800EC7FE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		629DB4E71CC0AFC100EC7FE1 /* XXBRefreshBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XXBRefreshBaseView.h; sourceTree = "<group>"; };
-		629DB4E81CC0AFC100EC7FE1 /* XXBRefreshBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XXBRefreshBaseView.m; sourceTree = "<group>"; };
-		629DB4EA1CC0B76400EC7FE1 /* UIScrollView+XXBRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+XXBRefresh.h"; sourceTree = "<group>"; };
-		629DB4EB1CC0B76400EC7FE1 /* UIScrollView+XXBRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+XXBRefresh.m"; sourceTree = "<group>"; };
-		629DB4ED1CC0C2CA00EC7FE1 /* XXBRefreshConsts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XXBRefreshConsts.h; sourceTree = "<group>"; };
-		629DB4EE1CC0C2CA00EC7FE1 /* XXBRefreshConsts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XXBRefreshConsts.m; sourceTree = "<group>"; };
-		629DB4F01CC0C3C100EC7FE1 /* UIView+XXBExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+XXBExtension.h"; sourceTree = "<group>"; };
-		629DB4F11CC0C3C100EC7FE1 /* UIView+XXBExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+XXBExtension.m"; sourceTree = "<group>"; };
-		629DB4F31CC0C57000EC7FE1 /* UIScrollView+XXBExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+XXBExtension.h"; sourceTree = "<group>"; };
-		629DB4F41CC0C57000EC7FE1 /* UIScrollView+XXBExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+XXBExtension.m"; sourceTree = "<group>"; };
-		629DB4F61CC0C7FC00EC7FE1 /* XXBRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XXBRefresh.h; sourceTree = "<group>"; };
-		629DB4F91CC0D14000EC7FE1 /* XXBRefreshHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XXBRefreshHeaderView.h; sourceTree = "<group>"; };
-		629DB4FA1CC0D14000EC7FE1 /* XXBRefreshHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XXBRefreshHeaderView.m; sourceTree = "<group>"; };
-		629DB4FC1CC0E4E300EC7FE1 /* XXBRefreshFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XXBRefreshFooterView.h; sourceTree = "<group>"; };
-		629DB4FD1CC0E4E300EC7FE1 /* XXBRefreshFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XXBRefreshFooterView.m; sourceTree = "<group>"; };
+		A84947D46AE63AC69CF21957 /* Pods-XXBRefreshDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XXBRefreshDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XXBRefreshDemo/Pods-XXBRefreshDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		B8E2DF3371147E98BEF2B831 /* libPods-XXBRefreshDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XXBRefreshDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,18 +37,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9AA6830E1F5DAB9D6EA2BAA7 /* libPods-XXBRefreshDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		530E82E28BF57E61FDC77238 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A84947D46AE63AC69CF21957 /* Pods-XXBRefreshDemo.debug.xcconfig */,
+				55356E7A70C1195237CCCBBD /* Pods-XXBRefreshDemo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		629DB4B91CC090B800EC7FE1 = {
 			isa = PBXGroup;
 			children = (
-				629DB4DC1CC0977000EC7FE1 /* XXBRefresh */,
 				629DB4C41CC090B800EC7FE1 /* XXBRefreshDemo */,
 				629DB4C31CC090B800EC7FE1 /* Products */,
+				530E82E28BF57E61FDC77238 /* Pods */,
+				B146D1EDC815537024125C80 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -102,43 +95,12 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		629DB4DC1CC0977000EC7FE1 /* XXBRefresh */ = {
+		B146D1EDC815537024125C80 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				629DB4DF1CC0977000EC7FE1 /* Others */,
-				629DB4E01CC0977000EC7FE1 /* View */,
-				629DB4F61CC0C7FC00EC7FE1 /* XXBRefresh.h */,
+				B8E2DF3371147E98BEF2B831 /* libPods-XXBRefreshDemo.a */,
 			);
-			name = XXBRefresh;
-			path = ../XXBRefresh;
-			sourceTree = "<group>";
-		};
-		629DB4DF1CC0977000EC7FE1 /* Others */ = {
-			isa = PBXGroup;
-			children = (
-				629DB4EA1CC0B76400EC7FE1 /* UIScrollView+XXBRefresh.h */,
-				629DB4EB1CC0B76400EC7FE1 /* UIScrollView+XXBRefresh.m */,
-				629DB4ED1CC0C2CA00EC7FE1 /* XXBRefreshConsts.h */,
-				629DB4EE1CC0C2CA00EC7FE1 /* XXBRefreshConsts.m */,
-				629DB4F01CC0C3C100EC7FE1 /* UIView+XXBExtension.h */,
-				629DB4F11CC0C3C100EC7FE1 /* UIView+XXBExtension.m */,
-				629DB4F31CC0C57000EC7FE1 /* UIScrollView+XXBExtension.h */,
-				629DB4F41CC0C57000EC7FE1 /* UIScrollView+XXBExtension.m */,
-			);
-			path = Others;
-			sourceTree = "<group>";
-		};
-		629DB4E01CC0977000EC7FE1 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				629DB4E71CC0AFC100EC7FE1 /* XXBRefreshBaseView.h */,
-				629DB4E81CC0AFC100EC7FE1 /* XXBRefreshBaseView.m */,
-				629DB4F91CC0D14000EC7FE1 /* XXBRefreshHeaderView.h */,
-				629DB4FA1CC0D14000EC7FE1 /* XXBRefreshHeaderView.m */,
-				629DB4FC1CC0E4E300EC7FE1 /* XXBRefreshFooterView.h */,
-				629DB4FD1CC0E4E300EC7FE1 /* XXBRefreshFooterView.m */,
-			);
-			path = View;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,9 +110,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 629DB4D91CC090B800EC7FE1 /* Build configuration list for PBXNativeTarget "XXBRefreshDemo" */;
 			buildPhases = (
+				2870A2F2F823C13D0DFF16BB /* Check Pods Manifest.lock */,
 				629DB4BE1CC090B800EC7FE1 /* Sources */,
 				629DB4BF1CC090B800EC7FE1 /* Frameworks */,
 				629DB4C01CC090B800EC7FE1 /* Resources */,
+				43B71C5F9FF9626DCF71F6C4 /* Embed Pods Frameworks */,
+				D4D8258CDF40446C072A65BB /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -206,21 +171,62 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2870A2F2F823C13D0DFF16BB /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		43B71C5F9FF9626DCF71F6C4 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-XXBRefreshDemo/Pods-XXBRefreshDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D4D8258CDF40446C072A65BB /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-XXBRefreshDemo/Pods-XXBRefreshDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		629DB4BE1CC090B800EC7FE1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				629DB4F51CC0C57000EC7FE1 /* UIScrollView+XXBExtension.m in Sources */,
-				629DB4EF1CC0C2CA00EC7FE1 /* XXBRefreshConsts.m in Sources */,
-				629DB4FE1CC0E4E300EC7FE1 /* XXBRefreshFooterView.m in Sources */,
 				629DB4CD1CC090B800EC7FE1 /* ViewController.m in Sources */,
-				629DB4EC1CC0B76400EC7FE1 /* UIScrollView+XXBRefresh.m in Sources */,
-				629DB4FB1CC0D14000EC7FE1 /* XXBRefreshHeaderView.m in Sources */,
 				629DB4CA1CC090B800EC7FE1 /* AppDelegate.m in Sources */,
-				629DB4E91CC0AFC100EC7FE1 /* XXBRefreshBaseView.m in Sources */,
 				629DB4C71CC090B800EC7FE1 /* main.m in Sources */,
-				629DB4F21CC0C3C100EC7FE1 /* UIView+XXBExtension.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,6 +336,7 @@
 		};
 		629DB4DA1CC090B800EC7FE1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A84947D46AE63AC69CF21957 /* Pods-XXBRefreshDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = XXBRefreshDemo/Info.plist;
@@ -342,6 +349,7 @@
 		};
 		629DB4DB1CC090B800EC7FE1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 55356E7A70C1195237CCCBBD /* Pods-XXBRefreshDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = XXBRefreshDemo/Info.plist;

@@ -1,0 +1,19 @@
+PODS:
+  - XXBRefresh (0.0.1):
+    - XXBRefresh/Others (= 0.0.1)
+    - XXBRefresh/View (= 0.0.1)
+  - XXBRefresh/Others (0.0.1)
+  - XXBRefresh/View (0.0.1):
+    - XXBRefresh/Others
+
+DEPENDENCIES:
+  - XXBRefresh (from `../`)
+
+EXTERNAL SOURCES:
+  XXBRefresh:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  XXBRefresh: 4639ec09be62cc26361d74d9cafa882d774a3116
+
+COCOAPODS: 0.39.0

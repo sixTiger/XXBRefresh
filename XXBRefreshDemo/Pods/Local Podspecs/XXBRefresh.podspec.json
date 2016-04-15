@@ -1,0 +1,43 @@
+{
+  "name": "XXBRefresh",
+  "requires_arc": true,
+  "version": "0.0.1",
+  "summary": "20160415",
+  "homepage": "https://github.com/sixTiger/XXBRefresh",
+  "license": "MIT",
+  "authors": {
+    "杨小兵": "six_tiger@163.com"
+  },
+  "platforms": {
+    "ios": "7.0"
+  },
+  "source": {
+    "git": "https://github.com/sixTiger/XXBRefresh.git",
+    "tag": "0.0.1"
+  },
+  "public_header_files": "XXBRefresh/XXBRefresh.h",
+  "source_files": "XXBRefresh/XXBRefresh.h",
+  "subspecs": [
+    {
+      "name": "Others",
+      "platforms": {
+        "ios": "7.0"
+      },
+      "source_files": "XXBRefresh/Others/*.{h,m}",
+      "public_header_files": "XXBRefresh/Others/*.h"
+    },
+    {
+      "name": "View",
+      "platforms": {
+        "ios": "7.0"
+      },
+      "dependencies": {
+        "XXBRefresh/Others": [
+
+        ]
+      },
+      "source_files": "XXBRefresh/View/*.{h,m}",
+      "public_header_files": "XXBRefresh/View/*.h"
+    }
+  ]
+}
