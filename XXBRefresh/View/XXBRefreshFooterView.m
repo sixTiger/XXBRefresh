@@ -34,11 +34,13 @@
 - (void)_init {
     
     self.backgroundColor = [UIColor redColor];
+    self.allowContentInset = YES;
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context {
-    // 不能跟用户交互就直接返回
-    if (!self.userInteractionEnabled || self.alpha <= 0.01 || self.hidden) return;
+    if (!self.userInteractionEnabled || self.alpha <= 0.01 || self.hidden) {
+        return;
+    }
     if ([XXBRefreshContentSize isEqualToString:keyPath]) {
         [self _adjustFrameWithContentSize];
     } else if ([XXBRefreshContentOffset isEqualToString:keyPath]) {
@@ -52,13 +54,13 @@
     [super willMoveToSuperview:newSuperview];
     // 旧的父控件
     [self.superview removeObserver:self forKeyPath:XXBRefreshContentSize context:nil];
-    if (newSuperview) { // 新的父控件
+    if (newSuperview) {
         // 监听
         [newSuperview addObserver:self forKeyPath:XXBRefreshContentSize options:NSKeyValueObservingOptionNew context:nil];
         // 重新调整frame
         [self _adjustFrameWithContentSize];
     }
-
+    
 }
 
 - (void)willRemoveSubview:(UIView *)subview {
@@ -66,10 +68,13 @@
     [self.superview removeObserver:self forKeyPath:XXBRefreshContentSize context:nil];
 }
 - (void)_adjustFrameWithContentSize {
-    CGFloat contentHeight = self.scrollView.xxb_contentSizeHeight;
-    CGFloat scrollHeight = self.scrollView.xxb_height - self.scrollViewOriginalInset.top - self.scrollViewOriginalInset.bottom;
+    CGFloat contentHeight = self.scrollView.xxb_contentSizeHeight ;
+    CGFloat scrollHeight = self.scrollView.xxb_height - self.scrollViewOriginalInset.top - self.scrollViewOriginalInset.bottom + self.scrollView.xxb_contentInsetBottom;
     // 设置位置和尺寸
     self.xxb_y = MAX(contentHeight, scrollHeight);
+    if (self.allowContentInset) {
+        self.xxb_y += self.scrollViewOriginalInset.bottom;
+    }
 }
 /**
  *  调整状态
@@ -146,7 +151,7 @@
                 }
                 self.scrollView.xxb_contentInsetBottom = bottom;
             }];
-
+            
             break;
         }
         default:

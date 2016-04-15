@@ -34,16 +34,17 @@
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context {
-    // 不能跟用户交互就直接返回
-    if (!self.userInteractionEnabled || self.alpha <= 0.01 || self.hidden) return;
+    if (!self.userInteractionEnabled || self.alpha <= 0.01 || self.hidden) {
+        return;
+    }
     if ([XXBRefreshContentOffset isEqualToString:keyPath]) {
-        // 如果正在刷新，直接返回
         if (self.refreshState == XXBRefreshStateRefreshing) {
             return;
         }
         [self _adjustStateWithContentOffset];
     }
 }
+
 - (void)willMoveToSuperview:(UIView *)newSuperview {
     [super willMoveToSuperview:newSuperview];
     self.xxb_y -= self.xxb_height;
@@ -56,11 +57,8 @@
  *  调整状态
  */
 - (void)_adjustStateWithContentOffset {
-    // 当前的contentOffset
     CGFloat currentOffsetY = self.scrollView.xxb_contentOffsetY;
-    // 头部控件刚好出现的offsetY
     CGFloat happenOffsetY = - self.scrollViewOriginalInset.top;
-    // 如果是向上滚动到看不见头部控件，直接返回
     if (currentOffsetY >= happenOffsetY) {
         return;
     }

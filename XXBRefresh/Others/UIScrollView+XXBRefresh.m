@@ -11,12 +11,6 @@
 #import "XXBRefreshFooterView.h"
 #import <objc/runtime.h>
 
-@interface UIScrollView ()
-
-@property (weak, nonatomic) XXBRefreshHeaderView    *header;
-@property (weak, nonatomic) XXBRefreshBaseView      *footer;
-@end
-
 @implementation UIScrollView (XXBRefresh)
 
 #pragma mark - 运行时相关
