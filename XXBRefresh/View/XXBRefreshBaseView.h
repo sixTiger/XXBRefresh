@@ -51,17 +51,22 @@ typedef enum {
 
 @property (nonatomic, weak, readonly) UIScrollView          *scrollView;
 @property (nonatomic, assign, readonly) UIEdgeInsets        scrollViewOriginalInset;
+
 /**
  *  开始刷新
  */
 - (void)beginRefreshing;
+
 /**
  *  结束刷新
  */
 - (void)endRefreshing;
 
 /**
- *  检测 UIScrollView 的 contentoffset 的变化 并且回调
+ *  KVO方式检测scrollView的相关属性的变化
+ *
+ *  默认监听scrollview的contentoffset
+ *
  */
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context;
 @end

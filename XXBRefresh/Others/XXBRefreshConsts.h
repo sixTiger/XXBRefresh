@@ -17,7 +17,23 @@
  *  刷新控件的默认高度
  */
 UIKIT_EXTERN const CGFloat XXBRefreshViewHeight;
+
+/**
+ *  默认动画时间
+ */
 UIKIT_EXTERN const CGFloat XXBRefreshAnimationDuration;
+
+/**
+ *  比较慢的动画时间
+ */
 UIKIT_EXTERN const CGFloat XXBRefreshAnimationDurationSlow;
+
+/**
+ *  contentOffset
+ */
 UIKIT_EXTERN NSString *const XXBRefreshContentOffset;
+
+/**
+ *  contentSize
+ */
 UIKIT_EXTERN NSString *const XXBRefreshContentSize;
