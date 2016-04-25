@@ -7,30 +7,20 @@ PODS:
   - XXBLibs/Class (0.0.1):
     - XXBLibs/Others
   - XXBLibs/Others (0.0.1)
-  - XXBRefresh (0.0.1):
-    - XXBRefresh/Others (= 0.0.1)
-    - XXBRefresh/View (= 0.0.1)
-  - XXBRefresh/Others (0.0.1)
-  - XXBRefresh/View (0.0.1):
-    - XXBRefresh/Others
 
 DEPENDENCIES:
   - XXBLibs (from `https://github.com/sixTiger/XXBLibs`)
-  - XXBRefresh (from `../`)
 
 EXTERNAL SOURCES:
   XXBLibs:
     :git: https://github.com/sixTiger/XXBLibs
-  XXBRefresh:
-    :path: "../"
 
 CHECKOUT OPTIONS:
   XXBLibs:
-    :commit: c25f8a421b19fd70a60ac1ed09630e7fb2b5f7b8
+    :commit: 060be8c12ab976ede9218024048cdc5162c63fa0
     :git: https://github.com/sixTiger/XXBLibs
 
 SPEC CHECKSUMS:
   XXBLibs: 247d1f4599815c7696b015828643e123a832bcfb
-  XXBRefresh: 4639ec09be62cc26361d74d9cafa882d774a3116
 
 COCOAPODS: 0.39.0

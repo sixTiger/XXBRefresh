@@ -14,14 +14,19 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>XXBRefresh.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>14CFFA05D3DCB197365D8058B4627731</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6D50821A651AB371419E03CE816563FD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>81001D8C0879DFC4663E1B90B85F31FC</key>
 		<dict>
 			<key>primary</key>

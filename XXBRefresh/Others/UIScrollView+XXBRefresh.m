@@ -19,22 +19,36 @@ static char XXBRefreshFooterViewKey;
 
 
 - (void)setHeader:(XXBRefreshBaseView *)header {
+    if(self.header == header) {
+        return;
+    }
+    [self.header removeFromSuperview];
     [self willChangeValueForKey:@"XXBRefreshHeaderViewKey"];
     objc_setAssociatedObject(self, &XXBRefreshHeaderViewKey,
                              header,
                              OBJC_ASSOCIATION_ASSIGN);
     [self didChangeValueForKey:@"XXBRefreshHeaderViewKey"];
+    [self addSubview:header];
 }
 
 - (XXBRefreshBaseView *)header {
     return objc_getAssociatedObject(self, &XXBRefreshHeaderViewKey);
 }
 - (void)setFooter:(XXBRefreshBaseView *)footer {
+    if(self.footer == footer) {
+        return;
+    }
+    if ( footer.beginRefreshingTaget == nil || footer.beginRefreshingAction == nil) {
+        footer.beginRefreshingAction = self.footer.beginRefreshingAction;
+        footer.beginRefreshingTaget = self.footer.beginRefreshingTaget;
+    }
+    [self.footer removeFromSuperview];
     [self willChangeValueForKey:@"XXBRefreshFooterViewKey"];
     objc_setAssociatedObject(self, &XXBRefreshFooterViewKey,
                              footer,
                              OBJC_ASSOCIATION_ASSIGN);
     [self didChangeValueForKey:@"XXBRefreshFooterViewKey"];
+    [self insertSubview:footer atIndex:0];
 }
 
 - (XXBRefreshBaseView *)footer {

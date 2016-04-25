@@ -18,22 +18,19 @@
 
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
-        [self _init];
+        [self prepare];
     }
     return self;
 }
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder {
     if (self = [super initWithCoder:aDecoder]) {
-        [self _init];
+        [self prepare];
     }
     return self;
 }
 
-/**
- *  初始化数据
- */
-- (void)_init {
+- (void)prepare {
     self.refreshState = XXBRefreshStateDefault;
 }
 

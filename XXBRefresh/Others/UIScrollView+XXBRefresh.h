@@ -7,13 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-@class XXBRefreshHeaderView,XXBRefreshBaseView;
+@class XXBRefreshHeaderView,XXBRefreshFooterView;
 
 @interface UIScrollView (XXBRefresh)
 
 @property (weak, nonatomic) XXBRefreshHeaderView    *header;
 
-@property (weak, nonatomic) XXBRefreshBaseView      *footer;
+@property (weak, nonatomic) XXBRefreshFooterView      *footer;
 #pragma mark - 下拉刷新
 /**
  *  添加一个下拉刷新头部控件

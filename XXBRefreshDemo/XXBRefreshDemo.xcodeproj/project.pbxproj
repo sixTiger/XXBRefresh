@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6227597C1CCDEE7E00BDE61A /* UIScrollView+XXBExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 6227596D1CCDEE7E00BDE61A /* UIScrollView+XXBExtension.m */; };
+		6227597D1CCDEE7E00BDE61A /* UIScrollView+XXBRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 6227596F1CCDEE7E00BDE61A /* UIScrollView+XXBRefresh.m */; };
+		6227597E1CCDEE7E00BDE61A /* UIView+XXBExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 622759711CCDEE7E00BDE61A /* UIView+XXBExtension.m */; };
+		6227597F1CCDEE7E00BDE61A /* XXBRefreshConsts.m in Sources */ = {isa = PBXBuildFile; fileRef = 622759731CCDEE7E00BDE61A /* XXBRefreshConsts.m */; };
+		622759801CCDEE7E00BDE61A /* XXBRefreshBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 622759761CCDEE7E00BDE61A /* XXBRefreshBaseView.m */; };
+		622759811CCDEE7E00BDE61A /* XXBRefreshFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 622759781CCDEE7E00BDE61A /* XXBRefreshFooterView.m */; };
+		622759821CCDEE7E00BDE61A /* XXBRefreshHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6227597A1CCDEE7E00BDE61A /* XXBRefreshHeaderView.m */; };
+		622759851CCDEF3100BDE61A /* XXBAutoRefreshFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 622759841CCDEF3100BDE61A /* XXBAutoRefreshFooterView.m */; };
 		629DB4C71CC090B800EC7FE1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 629DB4C61CC090B800EC7FE1 /* main.m */; };
 		629DB4CA1CC090B800EC7FE1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 629DB4C91CC090B800EC7FE1 /* AppDelegate.m */; };
 		629DB4CD1CC090B800EC7FE1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 629DB4CC1CC090B800EC7FE1 /* ViewController.m */; };
@@ -18,6 +26,23 @@
 
 /* Begin PBXFileReference section */
 		55356E7A70C1195237CCCBBD /* Pods-XXBRefreshDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XXBRefreshDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-XXBRefreshDemo/Pods-XXBRefreshDemo.release.xcconfig"; sourceTree = "<group>"; };
+		6227596C1CCDEE7E00BDE61A /* UIScrollView+XXBExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+XXBExtension.h"; sourceTree = "<group>"; };
+		6227596D1CCDEE7E00BDE61A /* UIScrollView+XXBExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+XXBExtension.m"; sourceTree = "<group>"; };
+		6227596E1CCDEE7E00BDE61A /* UIScrollView+XXBRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+XXBRefresh.h"; sourceTree = "<group>"; };
+		6227596F1CCDEE7E00BDE61A /* UIScrollView+XXBRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+XXBRefresh.m"; sourceTree = "<group>"; };
+		622759701CCDEE7E00BDE61A /* UIView+XXBExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+XXBExtension.h"; sourceTree = "<group>"; };
+		622759711CCDEE7E00BDE61A /* UIView+XXBExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+XXBExtension.m"; sourceTree = "<group>"; };
+		622759721CCDEE7E00BDE61A /* XXBRefreshConsts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XXBRefreshConsts.h; sourceTree = "<group>"; };
+		622759731CCDEE7E00BDE61A /* XXBRefreshConsts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XXBRefreshConsts.m; sourceTree = "<group>"; };
+		622759751CCDEE7E00BDE61A /* XXBRefreshBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XXBRefreshBaseView.h; sourceTree = "<group>"; };
+		622759761CCDEE7E00BDE61A /* XXBRefreshBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XXBRefreshBaseView.m; sourceTree = "<group>"; };
+		622759771CCDEE7E00BDE61A /* XXBRefreshFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XXBRefreshFooterView.h; sourceTree = "<group>"; };
+		622759781CCDEE7E00BDE61A /* XXBRefreshFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XXBRefreshFooterView.m; sourceTree = "<group>"; };
+		622759791CCDEE7E00BDE61A /* XXBRefreshHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XXBRefreshHeaderView.h; sourceTree = "<group>"; };
+		6227597A1CCDEE7E00BDE61A /* XXBRefreshHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XXBRefreshHeaderView.m; sourceTree = "<group>"; };
+		6227597B1CCDEE7E00BDE61A /* XXBRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XXBRefresh.h; sourceTree = "<group>"; };
+		622759831CCDEF3100BDE61A /* XXBAutoRefreshFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XXBAutoRefreshFooterView.h; sourceTree = "<group>"; };
+		622759841CCDEF3100BDE61A /* XXBAutoRefreshFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XXBAutoRefreshFooterView.m; sourceTree = "<group>"; };
 		629DB4C21CC090B800EC7FE1 /* XXBRefreshDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XXBRefreshDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		629DB4C61CC090B800EC7FE1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		629DB4C81CC090B800EC7FE1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -53,6 +78,47 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		6227596A1CCDEE7E00BDE61A /* XXBRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				6227596B1CCDEE7E00BDE61A /* Others */,
+				622759741CCDEE7E00BDE61A /* View */,
+				6227597B1CCDEE7E00BDE61A /* XXBRefresh.h */,
+			);
+			name = XXBRefresh;
+			path = ../../XXBRefresh;
+			sourceTree = "<group>";
+		};
+		6227596B1CCDEE7E00BDE61A /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				6227596C1CCDEE7E00BDE61A /* UIScrollView+XXBExtension.h */,
+				6227596D1CCDEE7E00BDE61A /* UIScrollView+XXBExtension.m */,
+				6227596E1CCDEE7E00BDE61A /* UIScrollView+XXBRefresh.h */,
+				6227596F1CCDEE7E00BDE61A /* UIScrollView+XXBRefresh.m */,
+				622759701CCDEE7E00BDE61A /* UIView+XXBExtension.h */,
+				622759711CCDEE7E00BDE61A /* UIView+XXBExtension.m */,
+				622759721CCDEE7E00BDE61A /* XXBRefreshConsts.h */,
+				622759731CCDEE7E00BDE61A /* XXBRefreshConsts.m */,
+			);
+			path = Others;
+			sourceTree = "<group>";
+		};
+		622759741CCDEE7E00BDE61A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				622759751CCDEE7E00BDE61A /* XXBRefreshBaseView.h */,
+				622759761CCDEE7E00BDE61A /* XXBRefreshBaseView.m */,
+				622759771CCDEE7E00BDE61A /* XXBRefreshFooterView.h */,
+				622759781CCDEE7E00BDE61A /* XXBRefreshFooterView.m */,
+				622759791CCDEE7E00BDE61A /* XXBRefreshHeaderView.h */,
+				6227597A1CCDEE7E00BDE61A /* XXBRefreshHeaderView.m */,
+				622759831CCDEF3100BDE61A /* XXBAutoRefreshFooterView.h */,
+				622759841CCDEF3100BDE61A /* XXBAutoRefreshFooterView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		629DB4B91CC090B800EC7FE1 = {
 			isa = PBXGroup;
 			children = (
@@ -74,6 +140,7 @@
 		629DB4C41CC090B800EC7FE1 /* XXBRefreshDemo */ = {
 			isa = PBXGroup;
 			children = (
+				6227596A1CCDEE7E00BDE61A /* XXBRefresh */,
 				629DB4C81CC090B800EC7FE1 /* AppDelegate.h */,
 				629DB4C91CC090B800EC7FE1 /* AppDelegate.m */,
 				629DB4CB1CC090B800EC7FE1 /* ViewController.h */,
@@ -224,8 +291,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				622759821CCDEE7E00BDE61A /* XXBRefreshHeaderView.m in Sources */,
+				622759811CCDEE7E00BDE61A /* XXBRefreshFooterView.m in Sources */,
+				6227597C1CCDEE7E00BDE61A /* UIScrollView+XXBExtension.m in Sources */,
+				6227597D1CCDEE7E00BDE61A /* UIScrollView+XXBRefresh.m in Sources */,
+				6227597F1CCDEE7E00BDE61A /* XXBRefreshConsts.m in Sources */,
+				622759851CCDEF3100BDE61A /* XXBAutoRefreshFooterView.m in Sources */,
 				629DB4CD1CC090B800EC7FE1 /* ViewController.m in Sources */,
+				6227597E1CCDEE7E00BDE61A /* UIView+XXBExtension.m in Sources */,
 				629DB4CA1CC090B800EC7FE1 /* AppDelegate.m in Sources */,
+				622759801CCDEE7E00BDE61A /* XXBRefreshBaseView.m in Sources */,
 				629DB4C71CC090B800EC7FE1 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

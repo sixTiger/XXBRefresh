@@ -53,6 +53,11 @@ typedef enum {
 @property (nonatomic, assign, readonly) UIEdgeInsets        scrollViewOriginalInset;
 
 /**
+ *  预设相关属性
+ */
+- (void)prepare;
+
+/**
  *  开始刷新
  */
 - (void)beginRefreshing;

@@ -7,3 +7,6 @@
 //
 
 #import"UIScrollView+XXBRefresh.h"
+#import "XXBRefreshHeaderView.h"
+#import "XXBRefreshFooterView.h"
+#import "XXBAutoRefreshFooterView.h"
