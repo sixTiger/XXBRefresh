@@ -8,22 +8,27 @@
 
 #import "XXBRefreshHeaderView.h"
 
+@interface XXBRefreshHeaderView ()
+@property (assign, nonatomic) CGFloat insetTDelta;
+@end
+
 @implementation XXBRefreshHeaderView
 
 + (instancetype)headerView {
     return [[self alloc] initWithFrame:CGRectMake(0, 0, XXBRefreshViewHeight, XXBRefreshViewHeight)];
 }
 
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context {
-    if (!self.userInteractionEnabled || self.alpha <= 0.01 || self.hidden) {
-        return;
-    }
-    if ([XXBRefreshContentOffset isEqualToString:keyPath]) {
-        if (self.refreshState == XXBRefreshStateRefreshing) {
-            return;
-        }
-        [self _adjustStateWithContentOffset];
-    }
+
++ (instancetype)headerWithRefreshingTarget:(id)target refreshingAction:(SEL)action {
+    XXBRefreshHeaderView *header = [self headerView];
+    header.beginRefreshingTaget = target;
+    header.beginRefreshingAction = action;
+    return header;
+}
+
+- (void)prepare {
+    [super prepare];
+    self.backgroundColor = [UIColor blueColor];
 }
 
 - (void)willMoveToSuperview:(UIView *)newSuperview {
@@ -37,13 +42,25 @@
 /**
  *  调整状态
  */
-- (void)_adjustStateWithContentOffset {
+- (void)scrollViewContentOffsetDidChange:(NSDictionary *)change {
+    [super scrollViewContentOffsetDidChange:change];
+    if (self.refreshState == XXBRefreshStateRefreshing) {
+        if (self.window == nil) {
+            return;
+        }
+        // sectionheader停留解决
+        CGFloat insetTop = MAX(- self.scrollView.xxb_contentOffsetY, self.scrollViewOriginalInset.top);
+        insetTop = MIN(insetTop, self.xxb_height + self.scrollViewOriginalInset.top);
+        self.scrollView.xxb_contentInsetTop = insetTop;
+        self.insetTDelta = self.scrollViewOriginalInset.top - insetTop;
+        return;
+    }
+    self.scrollViewOriginalInset = self.scrollView.contentInset;
     CGFloat currentOffsetY = self.scrollView.xxb_contentOffsetY;
     CGFloat happenOffsetY = - self.scrollViewOriginalInset.top;
     if (currentOffsetY >= happenOffsetY) {
         return;
     }
-    
     if (self.scrollView.isDragging) {
         // 普通 和 即将刷新 的临界点
         CGFloat normal2pullingOffsetY = happenOffsetY - self.xxb_height;

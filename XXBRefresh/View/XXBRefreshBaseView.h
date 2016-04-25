@@ -52,7 +52,7 @@ typedef enum {
 @property(nonatomic , assign) BOOL                          allowContentInset;
 
 @property (nonatomic, weak, readonly) UIScrollView          *scrollView;
-@property (nonatomic, assign, readonly) UIEdgeInsets        scrollViewOriginalInset;
+@property (nonatomic, assign) UIEdgeInsets                  scrollViewOriginalInset;
 
 /**
  *  预设相关属性
@@ -75,5 +75,17 @@ typedef enum {
  *  默认监听scrollview的contentoffset
  *
  */
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context;
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context NS_REQUIRES_SUPER;
+
+
+/**
+ *  @param change 当scrollView的contentOffset发生改变的时候调用
+ */
+- (void)scrollViewContentOffsetDidChange:(NSDictionary *)change NS_REQUIRES_SUPER;
+
+/**
+ *  @param change 当scrollView的contentOffset发生改变的时候调用
+ */
+- (void)scrollViewContentSizeDidChange:(NSDictionary *)change NS_REQUIRES_SUPER;
+
 @end

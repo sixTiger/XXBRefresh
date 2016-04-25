@@ -36,23 +36,42 @@
 
 - (void)willMoveToSuperview:(UIView *)newSuperview {
     [super willMoveToSuperview:newSuperview];
-    
-    [self.superview removeObserver:self forKeyPath:XXBRefreshContentOffset context:nil];
+    [self _removeObserber];
     if (newSuperview) { // 新的父控件
-        
-        [newSuperview addObserver:self forKeyPath:XXBRefreshContentOffset options:NSKeyValueObservingOptionNew context:nil];
         self.xxb_x = 0;
         self.xxb_width = newSuperview.xxb_width;
         _scrollView = (UIScrollView *)newSuperview;
         _scrollViewOriginalInset = _scrollView.contentInset;
+        [self _addObserver];
     }
 }
 
-- (void)willRemoveSubview:(UIView *)subview {
-    [self.superview removeObserver:self forKeyPath:XXBRefreshContentOffset context:nil];
+- (void)_addObserver {
+    [self.scrollView addObserver:self forKeyPath:XXBRefreshContentOffset options:NSKeyValueObservingOptionNew context:nil];
+    [self.scrollView addObserver:self forKeyPath:XXBRefreshContentSize options:NSKeyValueObservingOptionNew context:nil];
 }
 
+- (void)_removeObserber {
+    [self.superview removeObserver:self forKeyPath:XXBRefreshContentOffset];
+    [self.superview removeObserver:self forKeyPath:XXBRefreshContentSize];
+}
+
+
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context {
+    // 遇到这些情况就直接返回
+    if (!self.userInteractionEnabled) {
+        return;
+    }
+    // 这个就算看不见也需要处理
+    if ([keyPath isEqualToString:XXBRefreshContentSize]) {
+        [self scrollViewContentSizeDidChange:change];
+    }
+    if (self.hidden) {
+        return;
+    }
+    if ([keyPath isEqualToString:XXBRefreshContentOffset]) {
+        [self scrollViewContentOffsetDidChange:change];
+    }
 }
 
 - (void)beginRefreshing {
@@ -106,5 +125,11 @@
         default:
             break;
     }
+}
+
+- (void)scrollViewContentOffsetDidChange:(NSDictionary *)change {
+}
+
+- (void)scrollViewContentSizeDidChange:(NSDictionary *)change {
 }
 @end

@@ -15,7 +15,7 @@
 @implementation XXBAutoRefreshFooterView
 
 + (instancetype)footerView {
-    return [[self alloc] initWithFrame:CGRectMake(0, 0, 100, 60)];
+    return [[self alloc] initWithFrame:CGRectMake(0, 0, XXBRefreshViewHeight, XXBRefreshViewHeight)];
 }
 
 - (void)prepare {
@@ -25,15 +25,11 @@
 - (void)willMoveToSuperview:(UIView *)newSuperview {
     [super willMoveToSuperview:newSuperview];
     if (newSuperview) {
-        // 新的父控件
-        [newSuperview addObserver:self forKeyPath:XXBRefreshKeyPathPanState options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld  context:nil];
-        // 监听
-        [newSuperview addObserver:self forKeyPath:XXBRefreshContentSize options:NSKeyValueObservingOptionNew context:nil];
         // 重新调整frame
         if (self.hidden == NO) {
             self.scrollView.xxb_contentInsetBottom += self.xxb_height;
         }
-        [self _adjustFrameWithContentSize];
+        [self scrollViewContentSizeDidChange:nil];
         
     } else {
         // 被移除了
@@ -43,26 +39,18 @@
     }
 }
 
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context {
-    if ([XXBRefreshContentSize isEqualToString:keyPath]) {
-        [self _adjustFrameWithContentSize];
-    } else if ([XXBRefreshContentOffset isEqualToString:keyPath]) {
-        if (self.refreshState == XXBRefreshStateRefreshing) {
-            return;
-        }
-        [self _adjustStateWithContentOffset:change];
-    } else if([XXBRefreshKeyPathPanState isEqualToString:keyPath]) {
-        [self _scrollViewPanStateDidChange:change];
-    }
-}
-
-- (void)_adjustFrameWithContentSize {
+- (void)scrollViewContentSizeDidChange:(NSDictionary *)change {
+    [super scrollViewContentSizeDidChange:change];
     self.xxb_y = self.scrollView.xxb_contentSizeHeight;
 }
 /**
  *  调整状态
  */
-- (void)_adjustStateWithContentOffset:(NSDictionary *)change {
+- (void)scrollViewContentOffsetDidChange:(NSDictionary *)change {
+    [super scrollViewContentOffsetDidChange:change];
+    if (self.refreshState == XXBRefreshStateRefreshing) {
+        return;
+    }
     if (self.scrollView.xxb_contentInsetTop + self.scrollView.xxb_contentSizeHeight > self.scrollView.xxb_height) { // 内容超过一个屏幕
         if (self.scrollView.xxb_contentOffsetY >= self.scrollView.xxb_contentSizeHeight - self.scrollView.xxb_height + self.scrollView.xxb_contentInsetBottom - self.triggerAutoRefreshMarginBottom) {
             CGPoint old = [change[@"old"] CGPointValue];
@@ -98,7 +86,7 @@
             NSInteger currentCount = [self totalDataCountInScrollView];
             if (XXBRefreshStateRefreshing == oldState && deltaH > 0 && currentCount == self.lastRefreshCount) {
                 [UIView animateWithDuration:XXBRefreshAnimationDurationSlow animations:^{
-                    self.scrollView.xxb_contentOffsetY = self.scrollView.xxb_contentOffsetY - self.xxb_height;
+                    self.scrollView.xxb_contentOffsetY = self.scrollView.xxb_contentSizeHeight - self.scrollView.xxb_height;
                 }];
             }
             break;
@@ -108,6 +96,7 @@
             break;
         }
         case XXBRefreshStateRefreshing: {
+            self.lastRefreshCount = [self totalDataCountInScrollView];
             break;
         }
         default:
@@ -115,23 +104,7 @@
     }
     
 }
-- (void)_scrollViewPanStateDidChange:(NSDictionary *)change
-{
-    if (self.refreshState != XXBRefreshStateDefault)
-        return;
-    
-    if (self.scrollView.panGestureRecognizer.state == UIGestureRecognizerStateEnded) {// 手松开
-        if (self.scrollView.xxb_contentInsetTop + self.scrollView.xxb_contentSizeHeight <= self.scrollView.xxb_height) {  // 不够一个屏幕
-            if (self.scrollView.xxb_contentOffsetY >= - self.scrollView.xxb_contentInsetTop) { // 向上拽
-                [self beginRefreshing];
-            }
-        } else { // 超出一个屏幕
-            if (self.scrollView.xxb_contentOffsetY >= self.scrollView.xxb_contentSizeHeight + self.scrollView.xxb_contentInsetBottom - self.scrollView.xxb_height) {
-                [self beginRefreshing];
-            }
-        }
-    }
-}
+
 - (NSInteger)totalDataCountInScrollView
 {
     NSInteger totalCount = 0;
