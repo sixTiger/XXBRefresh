@@ -51,6 +51,7 @@
     [super scrollViewContentSizeDidChange:change];
     self.xxb_y = self.scrollView.xxb_contentSizeHeight;
 }
+
 /**
  *  调整状态
  */
@@ -66,7 +67,6 @@
             if (new.y <= old.y) {
                 return;
             }
-            NSLog(@"%@ >>> %@ >>> %@",@(self.scrollView.xxb_contentOffsetY),@(self.scrollView.xxb_contentSizeHeight),@(self.xxb_height));
             [self beginRefreshing];
         }
     }

@@ -18,7 +18,6 @@
     return [[self alloc] initWithFrame:CGRectMake(0, 0, XXBRefreshViewHeight, XXBRefreshViewHeight)];
 }
 
-
 + (instancetype)headerWithRefreshingTarget:(id)target refreshingAction:(SEL)action {
     XXBRefreshHeaderView *header = [self headerView];
     header.beginRefreshingTaget = target;

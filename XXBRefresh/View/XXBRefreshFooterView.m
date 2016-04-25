@@ -17,7 +17,6 @@
     return [[self alloc] initWithFrame:CGRectMake(0, 0, XXBRefreshViewHeight, XXBRefreshViewHeight)];
 }
 
-
 + (instancetype)footerWithRefreshingTarget:(id)target refreshingAction:(SEL)action {
     XXBRefreshFooterView *footerView = [self footerView];
     footerView.beginRefreshingTaget = target;
@@ -47,6 +46,7 @@
         self.xxb_y += self.scrollViewOriginalInset.bottom;
     }
 }
+
 /**
  *  调整状态
  */
