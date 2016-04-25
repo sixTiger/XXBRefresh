@@ -46,7 +46,7 @@
     [_tableView addHeaderWithTarget:self action:@selector(headerRefresh)];
     [_tableView addFooterWithTarget:self action:@selector(footerRefresh)];
     XXBAutoRefreshFooterView *footer = [[XXBAutoRefreshFooterView alloc] initWithFrame:CGRectMake(0, 0, 100, 80)];
-    footer.triggerAutoRefreshMarginBottom  = 200;
+    footer.triggerAutoRefreshMarginBottom  = 1;
     _tableView.footer = footer;
     _tableView.footer.backgroundColor = [UIColor redColor];
     
@@ -71,12 +71,15 @@
     NSLog(@"下拉刷新了");
 }
 - (void)footerRefresh {
-    NSInteger count = self.dataSouceArray.count;
     
-    for (int i = count; i < count + 5; i++) {
-        [_dataSouceArray addObject:[NSString stringWithFormat:@"cell >>> %@",@(_dataSouceArray.count)]];
-        [self.tableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:count inSection:0]] withRowAnimation:UITableViewRowAnimationBottom];
-    }
-    [self.tableView footerEndRefreshing];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        NSInteger count = self.dataSouceArray.count;
+        
+        for (int i = count; i < count + 5; i++) {
+            [_dataSouceArray addObject:[NSString stringWithFormat:@"cell >>> %@",@(_dataSouceArray.count)]];
+            [self.tableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:count inSection:0]] withRowAnimation:UITableViewRowAnimationBottom];
+        }
+        [self.tableView footerEndRefreshing];
+    });
 }
 @end

@@ -8,7 +8,15 @@
 
 #import "XXBAutoRefreshFooterView.h"
 
+@interface XXBAutoRefreshFooterView ()
+@property (assign, nonatomic) NSInteger         lastRefreshCount;
+@end
+
 @implementation XXBAutoRefreshFooterView
+
++ (instancetype)footerView {
+    return [[self alloc] initWithFrame:CGRectMake(0, 0, 100, 60)];
+}
 
 - (void)prepare {
     _autoCallRefresh = YES;
@@ -16,7 +24,23 @@
 
 - (void)willMoveToSuperview:(UIView *)newSuperview {
     [super willMoveToSuperview:newSuperview];
-    [newSuperview addObserver:self forKeyPath:XXBRefreshKeyPathPanState options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld  context:nil];
+    if (newSuperview) {
+        // 新的父控件
+        [newSuperview addObserver:self forKeyPath:XXBRefreshKeyPathPanState options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld  context:nil];
+        // 监听
+        [newSuperview addObserver:self forKeyPath:XXBRefreshContentSize options:NSKeyValueObservingOptionNew context:nil];
+        // 重新调整frame
+        if (self.hidden == NO) {
+            self.scrollView.xxb_contentInsetBottom += self.xxb_height;
+        }
+        [self _adjustFrameWithContentSize];
+        
+    } else {
+        // 被移除了
+        if (self.hidden == NO) {
+            self.scrollView.xxb_contentInsetBottom -= self.xxb_height;
+        }
+    }
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context {
@@ -33,44 +57,14 @@
 }
 
 - (void)_adjustFrameWithContentSize {
-    CGFloat contentHeight = self.scrollView.xxb_contentSizeHeight ;
-    CGFloat scrollHeight = self.scrollView.xxb_height - self.scrollViewOriginalInset.top - self.scrollViewOriginalInset.bottom + self.scrollView.xxb_contentInsetBottom;
-    // 设置位置和尺寸
-    self.xxb_y = MAX(contentHeight, scrollHeight);
-    if (self.allowContentInset) {
-        self.xxb_y += self.scrollViewOriginalInset.bottom;
-    }
+    self.xxb_y = self.scrollView.xxb_contentSizeHeight;
 }
 /**
  *  调整状态
  */
 - (void)_adjustStateWithContentOffset:(NSDictionary *)change {
-    CGFloat currentOffsetY = self.scrollView.xxb_contentOffsetY;
-    CGFloat happenOffsetY = [self happenOffsetY];
-    if (self.scrollView.isDragging) {
-        // 普通 和 即将刷新 的临界点
-        CGFloat normal2pullingOffsetY = happenOffsetY + self.xxb_height;
-        
-        if (self.refreshState == XXBRefreshStateDefault && currentOffsetY > normal2pullingOffsetY) {
-            // 转为即将刷新状态
-            self.refreshState = XXBRefreshStatePulling;
-        } else if (self.refreshState == XXBRefreshStatePulling && currentOffsetY <= normal2pullingOffsetY) {
-            // 转为普通状态
-            self.refreshState = XXBRefreshStateDefault;
-        }
-    } else{
-        if (self.refreshState == XXBRefreshStatePulling) {// 即将刷新 && 手松开
-            // 开始刷新
-            self.refreshState = XXBRefreshStateRefreshing;
-        }
-    }
-    
-    if (self.refreshState != XXBRefreshStateDefault || !self.autoCallRefresh || self.xxb_y == 0) {
-        return;
-    }
-    
     if (self.scrollView.xxb_contentInsetTop + self.scrollView.xxb_contentSizeHeight > self.scrollView.xxb_height) { // 内容超过一个屏幕
-        if (self.scrollView.xxb_contentOffsetY >= self.scrollView.xxb_contentSizeHeight - self.scrollView.xxb_height + self.scrollView.xxb_contentInsetBottom + self.xxb_height - self.triggerAutoRefreshMarginBottom) {
+        if (self.scrollView.xxb_contentOffsetY >= self.scrollView.xxb_contentSizeHeight - self.scrollView.xxb_height + self.scrollView.xxb_contentInsetBottom - self.triggerAutoRefreshMarginBottom) {
             CGPoint old = [change[@"old"] CGPointValue];
             CGPoint new = [change[@"new"] CGPointValue];
             if (new.y <= old.y) {
@@ -80,9 +74,47 @@
             [self beginRefreshing];
         }
     }
-    
 }
 
+- (void)setRefreshState:(XXBRefreshState)refreshState {
+    // 1.一样的就直接返回
+    if (self.refreshState == refreshState) {
+        return;
+    }
+    // 2.保存旧状态
+    XXBRefreshState oldState = self.refreshState;
+    // 3.调用父类方法
+    [super setRefreshState:refreshState];
+    // 4.根据状态执行不同的操作
+    switch (refreshState) {
+        case XXBRefreshStateDefault: {
+            // 下拉可以刷新
+            // 刷新完毕
+            if (XXBRefreshStateRefreshing == oldState) {
+                
+            }
+            CGFloat deltaH = [self heightForContentBreakView];
+            // 刚刷新完毕
+            NSInteger currentCount = [self totalDataCountInScrollView];
+            if (XXBRefreshStateRefreshing == oldState && deltaH > 0 && currentCount == self.lastRefreshCount) {
+                [UIView animateWithDuration:XXBRefreshAnimationDurationSlow animations:^{
+                    self.scrollView.xxb_contentOffsetY = self.scrollView.xxb_contentOffsetY - self.xxb_height;
+                }];
+            }
+            break;
+        }
+        case XXBRefreshStatePulling: {
+            // 松开可立即刷新
+            break;
+        }
+        case XXBRefreshStateRefreshing: {
+            break;
+        }
+        default:
+            break;
+    }
+    
+}
 - (void)_scrollViewPanStateDidChange:(NSDictionary *)change
 {
     if (self.refreshState != XXBRefreshStateDefault)

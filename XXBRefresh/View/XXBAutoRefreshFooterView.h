@@ -6,9 +6,9 @@
 //  Copyright © 2016年 xiaobing. All rights reserved.
 //
 
-#import "XXBRefreshFooterView.h"
+#import "XXBRefreshBaseView.h"
 
-@interface XXBAutoRefreshFooterView : XXBRefreshFooterView
+@interface XXBAutoRefreshFooterView : XXBRefreshBaseView
 
 /**
  *  是否自动刷新 默认是Yes
@@ -19,4 +19,6 @@
  *  footer距离底部多少的时候开始刷新  默认是footer 完全现实的时候
  */
 @property (assign, nonatomic) CGFloat   triggerAutoRefreshMarginBottom;
+
++ (instancetype)footerView;
 @end

@@ -90,18 +90,14 @@
     if (_refreshState == XXBRefreshStateRefreshing) {
         _scrollViewOriginalInset = self.scrollView.contentInset;
     }
-    
     switch (refreshState) {
         case XXBRefreshStateDefault: {
             break;
         }
-            
         case XXBRefreshStatePulling: {
             break;
         }
-            
         case XXBRefreshStateRefreshing: {
-            // 回调
             if ([self.beginRefreshingTaget respondsToSelector:self.beginRefreshingAction]) {
                 msgSend(msgTarget(self.beginRefreshingTaget), self.beginRefreshingAction, self);
             }

@@ -19,7 +19,9 @@ typedef enum {
 } XXBRefreshState;
 
 
-@interface XXBRefreshBaseView : UIView
+@interface XXBRefreshBaseView : UIView {
+    XXBRefreshState         _refreshState;
+}
 
 /**
  *  开始进入刷新状态的监听器
