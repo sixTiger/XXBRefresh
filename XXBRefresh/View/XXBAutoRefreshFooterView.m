@@ -14,11 +14,19 @@
 
 @implementation XXBAutoRefreshFooterView
 
-+ (instancetype)footerView {
++ (instancetype)autoRefreshFooter {
     return [[self alloc] initWithFrame:CGRectMake(0, 0, XXBRefreshViewHeight, XXBRefreshViewHeight)];
 }
 
++ (instancetype)autoRefreshFooterWithRefreshingTarget:(id)target refreshingAction:(SEL)action {
+    XXBAutoRefreshFooterView *autoRefreshFooter = [self autoRefreshFooter];
+    autoRefreshFooter.beginRefreshingTaget = target;
+    autoRefreshFooter.beginRefreshingAction = action;
+    return autoRefreshFooter;
+}
+
 - (void)prepare {
+    [super prepare];
     _autoCallRefresh = YES;
 }
 
@@ -65,24 +73,18 @@
 }
 
 - (void)setRefreshState:(XXBRefreshState)refreshState {
-    // 1.一样的就直接返回
     if (self.refreshState == refreshState) {
         return;
     }
-    // 2.保存旧状态
     XXBRefreshState oldState = self.refreshState;
-    // 3.调用父类方法
     [super setRefreshState:refreshState];
-    // 4.根据状态执行不同的操作
     switch (refreshState) {
         case XXBRefreshStateDefault: {
-            // 下拉可以刷新
-            // 刷新完毕
             if (XXBRefreshStateRefreshing == oldState) {
                 
             }
             CGFloat deltaH = [self heightForContentBreakView];
-            // 刚刷新完毕
+            // 刚刷新完毕 根据刷新后的数据情况确定时候滑动
             NSInteger currentCount = [self totalDataCountInScrollView];
             if (XXBRefreshStateRefreshing == oldState && deltaH > 0 && currentCount == self.lastRefreshCount) {
                 [UIView animateWithDuration:XXBRefreshAnimationDurationSlow animations:^{

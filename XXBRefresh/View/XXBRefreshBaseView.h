@@ -57,17 +57,17 @@ typedef enum {
 /**
  *  预设相关属性
  */
-- (void)prepare;
+- (void)prepare NS_REQUIRES_SUPER;
 
 /**
  *  开始刷新
  */
-- (void)beginRefreshing;
+- (void)beginRefreshing NS_REQUIRES_SUPER;
 
 /**
  *  结束刷新
  */
-- (void)endRefreshing;
+- (void)endRefreshing NS_REQUIRES_SUPER;
 
 /**
  *  KVO方式检测scrollView的相关属性的变化

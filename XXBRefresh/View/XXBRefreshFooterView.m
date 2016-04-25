@@ -17,6 +17,14 @@
     return [[self alloc] initWithFrame:CGRectMake(0, 0, XXBRefreshViewHeight, XXBRefreshViewHeight)];
 }
 
+
++ (instancetype)footerWithRefreshingTarget:(id)target refreshingAction:(SEL)action {
+    XXBRefreshFooterView *footerView = [self footerView];
+    footerView.beginRefreshingTaget = target;
+    footerView.beginRefreshingAction = action;
+    return footerView;
+}
+
 - (void)willMoveToSuperview:(UIView *)newSuperview {
     [super willMoveToSuperview:newSuperview];
     if (newSuperview) {

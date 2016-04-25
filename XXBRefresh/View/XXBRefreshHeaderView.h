@@ -9,6 +9,7 @@
 #import "XXBRefreshBaseView.h"
 
 @interface XXBRefreshHeaderView : XXBRefreshBaseView
+NS_ASSUME_NONNULL_BEGIN
 
 /**
  *  快速创建一个Header
@@ -21,9 +22,10 @@
  *  快速创建一个Header
  *
  *  @param target 回调的对象
- *  @param action 回调的防范
+ *  @param action 回调的事件
  *
  *  @return 创建好的header
  */
 + (instancetype)headerWithRefreshingTarget:(id)target refreshingAction:(SEL)action;
+NS_ASSUME_NONNULL_END
 @end

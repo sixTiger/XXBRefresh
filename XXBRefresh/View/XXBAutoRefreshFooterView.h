@@ -20,5 +20,23 @@
  */
 @property (assign, nonatomic) CGFloat   triggerAutoRefreshMarginBottom;
 
-+ (instancetype)footerView;
+NS_ASSUME_NONNULL_BEGIN
+
+/**
+ *  快速创建一个 autoRefreshFooter
+ *
+ *  @return autoRefreshFooter
+ */
++ (instancetype)autoRefreshFooter;
+
+/**
+ *  快速创建一个autoRefreshFooter
+ *
+ *  @param target 回调的对象
+ *  @param action 回调的事件
+ *
+ *  @return 创建好的autoRefreshFooter
+ */
++ (instancetype)autoRefreshFooterWithRefreshingTarget:(id)target refreshingAction:(SEL)action;
+NS_ASSUME_NONNULL_END
 @end

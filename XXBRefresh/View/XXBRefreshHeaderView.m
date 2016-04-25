@@ -28,7 +28,6 @@
 
 - (void)prepare {
     [super prepare];
-    self.backgroundColor = [UIColor blueColor];
 }
 
 - (void)willMoveToSuperview:(UIView *)newSuperview {
