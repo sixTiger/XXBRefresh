@@ -16,6 +16,7 @@
 		622759811CCDEE7E00BDE61A /* XXBRefreshFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 622759781CCDEE7E00BDE61A /* XXBRefreshFooterView.m */; };
 		622759821CCDEE7E00BDE61A /* XXBRefreshHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6227597A1CCDEE7E00BDE61A /* XXBRefreshHeaderView.m */; };
 		622759851CCDEF3100BDE61A /* XXBAutoRefreshFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 622759841CCDEF3100BDE61A /* XXBAutoRefreshFooterView.m */; };
+		625C75B01D36837D003852CB /* XXBAutoRefreshFooterUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 625C75AF1D36837D003852CB /* XXBAutoRefreshFooterUIView.m */; };
 		629DB4C71CC090B800EC7FE1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 629DB4C61CC090B800EC7FE1 /* main.m */; };
 		629DB4CA1CC090B800EC7FE1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 629DB4C91CC090B800EC7FE1 /* AppDelegate.m */; };
 		629DB4CD1CC090B800EC7FE1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 629DB4CC1CC090B800EC7FE1 /* ViewController.m */; };
@@ -46,6 +47,8 @@
 		6227597B1CCDEE7E00BDE61A /* XXBRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XXBRefresh.h; sourceTree = "<group>"; };
 		622759831CCDEF3100BDE61A /* XXBAutoRefreshFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XXBAutoRefreshFooterView.h; sourceTree = "<group>"; };
 		622759841CCDEF3100BDE61A /* XXBAutoRefreshFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XXBAutoRefreshFooterView.m; sourceTree = "<group>"; };
+		625C75AE1D36837D003852CB /* XXBAutoRefreshFooterUIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XXBAutoRefreshFooterUIView.h; sourceTree = "<group>"; };
+		625C75AF1D36837D003852CB /* XXBAutoRefreshFooterUIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XXBAutoRefreshFooterUIView.m; sourceTree = "<group>"; };
 		629DB4C21CC090B800EC7FE1 /* XXBRefreshDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XXBRefreshDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		629DB4C61CC090B800EC7FE1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		629DB4C81CC090B800EC7FE1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -128,6 +131,8 @@
 				622759841CCDEF3100BDE61A /* XXBAutoRefreshFooterView.m */,
 				E1B8D4BC1D35DC25000C6A22 /* XXBRefreshHeaderUIView.h */,
 				E1B8D4BD1D35DC25000C6A22 /* XXBRefreshHeaderUIView.m */,
+				625C75AE1D36837D003852CB /* XXBAutoRefreshFooterUIView.h */,
+				625C75AF1D36837D003852CB /* XXBAutoRefreshFooterUIView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -316,6 +321,7 @@
 				622759821CCDEE7E00BDE61A /* XXBRefreshHeaderView.m in Sources */,
 				622759811CCDEE7E00BDE61A /* XXBRefreshFooterView.m in Sources */,
 				6227597C1CCDEE7E00BDE61A /* UIScrollView+XXBExtension.m in Sources */,
+				625C75B01D36837D003852CB /* XXBAutoRefreshFooterUIView.m in Sources */,
 				6227597D1CCDEE7E00BDE61A /* UIScrollView+XXBRefresh.m in Sources */,
 				6227597F1CCDEE7E00BDE61A /* XXBRefreshConsts.m in Sources */,
 				622759851CCDEF3100BDE61A /* XXBAutoRefreshFooterView.m in Sources */,

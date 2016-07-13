@@ -9,7 +9,8 @@
 #import "XXBRefreshHeaderView.h"
 
 @interface XXBRefreshHeaderView ()
-@property (assign, nonatomic) CGFloat insetTDelta;
+@property (assign, nonatomic) CGFloat   insetTDelta;
+@property (assign, nonatomic) BOOL      show;
 @end
 
 @implementation XXBRefreshHeaderView
@@ -58,6 +59,12 @@
     CGFloat happenOffsetY = - self.scrollViewOriginalInset.top;
     if (currentOffsetY >= happenOffsetY) {
         return;
+    } else {
+        if (!self.show && self.scrollView.isDragging) {
+            self.show = YES;
+            self.refreshState = XXBRefreshStateStartWillShow;
+            self.refreshState = XXBRefreshStateDefault;
+        }
     }
     if (self.scrollView.isDragging) {
         // 普通 和 即将刷新 的临界点
@@ -92,7 +99,8 @@
     [super setRefreshState:refreshState];
     // 4.根据状态执行不同的操作
     switch (refreshState) {
-        case XXBRefreshStateDefault: {
+        case XXBRefreshStateDefault:
+        {
             // 下拉可以刷新
             // 刷新完毕
             if (XXBRefreshStateRefreshing == oldState) {
@@ -102,11 +110,13 @@
             }
             break;
         }
-        case XXBRefreshStatePulling: {
+        case XXBRefreshStatePulling:
+        {
             // 松开可立即刷新
             break;
         }
-        case XXBRefreshStateRefreshing: {
+        case XXBRefreshStateRefreshing:
+        {
             // 正在刷新中
             // 执行动画
             [UIView animateWithDuration:XXBRefreshAnimationDuration animations:^{
@@ -119,9 +129,16 @@
             }];
             break;
         }
-        case XXBRefreshStateEndRefreshing: {
+        case XXBRefreshStateEndRefreshing:
+        {
+            __weak typeof(self) weakSelf = self;
             [UIView animateWithDuration:XXBRefreshAnimationDurationSlow animations:^{
                 self.scrollView.xxb_contentInsetTop -= self.xxb_height;
+            } completion:^(BOOL finished) {
+                __strong typeof(weakSelf) strongSelf = weakSelf;
+                strongSelf.show = NO;
+                strongSelf.refreshState = XXBRefreshStateStartWillHiden;
+                strongSelf.refreshState = XXBRefreshStateDefault;
             }];
             break;
         }

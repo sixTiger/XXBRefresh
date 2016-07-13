@@ -29,7 +29,6 @@
 static NSString *XXBRefreshHeaderUIViewLastRefreshTime = @"XXBRefreshHeaderUIViewLastRefreshTime";
 - (void)layoutSubviews {
     [super layoutSubviews];
-    NSLog(@"+++++");
     [self.lastRefreshTimeLabel sizeToFit];
     self.lastRefreshTimeLabel.xxb_x = XXBRefreshMarginInset;
     self.lastRefreshTimeLabel.xxb_y = XXBRefreshMarginInset;
@@ -212,6 +211,19 @@ static NSString *XXBRefreshHeaderUIViewLastRefreshTime = @"XXBRefreshHeaderUIVie
         {
             [self.activityIndicatorView stopAnimating];
             self.messageLabel.text = @"松开刷新";
+            break;
+        }
+        case XXBRefreshStateStartWillShow:
+        {
+            [self.activityIndicatorView stopAnimating];
+            self.messageLabel.text = @"下拉刷新";
+            [self updateTimeLabel];
+            break;
+        }
+        case XXBRefreshStateStartWillHiden:
+        {
+            [self.activityIndicatorView stopAnimating];
+            self.messageLabel.text = @"下拉刷新";
             break;
         }
             

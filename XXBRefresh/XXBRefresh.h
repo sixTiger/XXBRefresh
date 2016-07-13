@@ -15,4 +15,5 @@
 //UI
 #import "XXBRefreshRseources.h"
 #import "XXBRefreshHeaderUIView.h"
+#import "XXBAutoRefreshFooterUIView.h"
 
