@@ -211,7 +211,7 @@ static NSString *XXBRefreshHeaderUIViewLastRefreshTime = @"XXBRefreshHeaderUIVie
         case XXBRefreshStateWillRefreshing:
         {
             [self.activityIndicatorView stopAnimating];
-            self.messageLabel.text = @"松开刷新刷新";
+            self.messageLabel.text = @"松开刷新";
             break;
         }
             

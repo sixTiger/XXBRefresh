@@ -56,7 +56,6 @@
     [self.superview removeObserver:self forKeyPath:XXBRefreshContentSize];
 }
 
-
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context {
     // 遇到这些情况就直接返回
     if (!self.userInteractionEnabled) {
@@ -82,7 +81,6 @@
         }
         
     } else {
-        
         self.refreshState = XXBRefreshStateWillRefreshing;
         if (self.window) {
             self.refreshState = XXBRefreshStateRefreshing;

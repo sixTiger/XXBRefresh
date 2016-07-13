@@ -47,4 +47,3 @@ UIKIT_EXTERN NSString *const XXBRefreshContentOffset;
  */
 UIKIT_EXTERN NSString *const XXBRefreshContentSize;
 
-UIKIT_EXTERN NSString *const XXBRefreshKeyPathPanState;

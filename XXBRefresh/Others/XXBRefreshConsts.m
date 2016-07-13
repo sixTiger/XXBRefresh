@@ -15,4 +15,3 @@ const CGFloat XXBRefreshAnimationDuration = 0.25;
 const CGFloat XXBRefreshAnimationDurationSlow = 0.5;
 NSString *const XXBRefreshContentOffset = @"contentOffset";
 NSString *const XXBRefreshContentSize = @"contentSize";
-NSString *const XXBRefreshKeyPathPanState = @"state";

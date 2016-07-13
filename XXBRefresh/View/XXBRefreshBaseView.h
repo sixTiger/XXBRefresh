@@ -17,7 +17,9 @@ typedef enum {
     XXBRefreshStatePulling ,        //松开就可以进入刷新状态
     XXBRefreshStateRefreshing,      //正在刷新状态
     XXBRefreshStateWillRefreshing,  //即将刷新状态
-    XXBRefreshStateEndRefreshing    //刷新结束
+    XXBRefreshStateEndRefreshing,   //刷新结束
+    XXBRefreshStateStartWillShow,   //将要显示
+    XXBRefreshStateStartWillHiden,  //将要消失
 } XXBRefreshState;
 
 
