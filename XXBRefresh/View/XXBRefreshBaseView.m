@@ -81,6 +81,8 @@
         }
         
     } else {
+        
+        self.refreshState = XXBRefreshStateStartWillShow;
         self.refreshState = XXBRefreshStateWillRefreshing;
         if (self.window) {
             self.refreshState = XXBRefreshStateRefreshing;
