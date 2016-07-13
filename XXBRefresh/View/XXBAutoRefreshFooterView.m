@@ -10,6 +10,7 @@
 
 @interface XXBAutoRefreshFooterView ()
 @property (assign, nonatomic) NSInteger         lastRefreshCount;
+
 @end
 
 @implementation XXBAutoRefreshFooterView

@@ -10,7 +10,6 @@
 
 @interface XXBRefreshHeaderView ()
 @property (assign, nonatomic) CGFloat   insetTDelta;
-@property (assign, nonatomic) BOOL      show;
 @end
 
 @implementation XXBRefreshHeaderView
@@ -93,21 +92,12 @@
     if (self.refreshState == refreshState) {
         return;
     }
-    // 2.保存旧状态
-    XXBRefreshState oldState = self.refreshState;
-    // 3.调用父类方法
+    // 2.调用父类方法
     [super setRefreshState:refreshState];
-    // 4.根据状态执行不同的操作
+    // 3.根据状态执行不同的操作
     switch (refreshState) {
         case XXBRefreshStateDefault:
         {
-            // 下拉可以刷新
-            // 刷新完毕
-            if (XXBRefreshStateRefreshing == oldState) {
-                
-            } else {
-                
-            }
             break;
         }
         case XXBRefreshStatePulling:

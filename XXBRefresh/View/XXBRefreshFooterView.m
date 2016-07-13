@@ -56,7 +56,14 @@
     CGFloat happenOffsetY = [self happenOffsetY];
     if (currentOffsetY <= happenOffsetY){
         return;
+    } else {
+        if (!self.show && self.scrollView.isDragging) {
+            self.show = YES;
+            self.refreshState = XXBRefreshStateStartWillShow;
+            self.refreshState = XXBRefreshStateDefault;
+        }
     }
+    
     if (self.scrollView.isDragging) {
         CGFloat normal2pullingOffsetY = happenOffsetY + self.xxb_height;
         if (self.refreshState == XXBRefreshStateDefault && currentOffsetY > normal2pullingOffsetY) {
@@ -85,19 +92,6 @@
     // 4.根据状态执行不同的操作
     switch (refreshState) {
         case XXBRefreshStateDefault: {
-            // 下拉可以刷新
-            // 刷新完毕
-            if (XXBRefreshStateRefreshing == oldState) {
-                [UIView animateWithDuration:XXBRefreshAnimationDurationSlow animations:^{
-                    self.scrollView.xxb_contentInsetBottom = self.scrollViewOriginalInset.bottom;
-                }];
-            }
-            CGFloat deltaH = [self heightForContentBreakView];
-            NSInteger currentCount = [self totalDataCountInScrollView];
-            // 刚刷新完毕
-            if (XXBRefreshStateRefreshing == oldState && deltaH > 0 && currentCount != self.lastRefreshCount) {
-                self.scrollView.xxb_contentOffsetY = self.scrollView.xxb_contentOffsetY;
-            }
             break;
         }
         case XXBRefreshStatePulling: {
@@ -119,6 +113,27 @@
             }];
             
             break;
+        }
+        case XXBRefreshStateEndRefreshing: {
+            // 刷新完毕
+            __weak typeof(self) weakSelf = self;
+            if (XXBRefreshStateRefreshing == oldState) {
+                [UIView animateWithDuration:XXBRefreshAnimationDurationSlow animations:^{
+                    self.scrollView.xxb_contentInsetBottom = self.scrollViewOriginalInset.bottom;
+                } completion:^(BOOL finished) {
+                    __strong typeof(weakSelf) strongSelf = weakSelf;
+                    strongSelf.refreshState = XXBRefreshStateStartWillHiden;
+                    strongSelf.refreshState = XXBRefreshStateDefault;
+                    strongSelf.show = NO;
+                }];
+                
+                CGFloat deltaH = [self heightForContentBreakView];
+                NSInteger currentCount = [self totalDataCountInScrollView];
+                // 刚刷新完毕
+                if ( deltaH > 0 && currentCount != self.lastRefreshCount) {
+                    self.scrollView.xxb_contentOffsetY = self.scrollView.xxb_contentOffsetY;
+                }
+            }
         }
         default:
             break;

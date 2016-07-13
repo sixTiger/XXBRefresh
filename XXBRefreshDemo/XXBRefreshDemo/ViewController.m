@@ -42,13 +42,13 @@
     _tableView.rowHeight = 80;
     _tableView.delegate = self;
     _tableView.dataSource = self;
-    _tableView.contentInset = UIEdgeInsetsMake(150, 0, 150, 0);
+//    _tableView.contentInset = UIEdgeInsetsMake(150, 0, 150, 0);
     [_tableView addHeaderWithTarget:self action:@selector(headerRefresh)];
     [_tableView addFooterWithTarget:self action:@selector(footerRefresh)];
     XXBAutoRefreshFooterUIView *footer = [[XXBAutoRefreshFooterUIView alloc] initWithFrame:CGRectMake(0, 0, 100, 80)];
     footer.triggerAutoRefreshMarginBottom  = 1;
-    _tableView.footer = footer;
-//    _tableView.footer.backgroundColor = [UIColor redColor];
+//    _tableView.footer = footer;
+    _tableView.footer.backgroundColor = [UIColor redColor];
 //    _tableView.header.backgroundColor = [UIColor blueColor];
     
 }

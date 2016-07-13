@@ -17,6 +17,7 @@
 		622759821CCDEE7E00BDE61A /* XXBRefreshHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6227597A1CCDEE7E00BDE61A /* XXBRefreshHeaderView.m */; };
 		622759851CCDEF3100BDE61A /* XXBAutoRefreshFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 622759841CCDEF3100BDE61A /* XXBAutoRefreshFooterView.m */; };
 		625C75B01D36837D003852CB /* XXBAutoRefreshFooterUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 625C75AF1D36837D003852CB /* XXBAutoRefreshFooterUIView.m */; };
+		625C75B31D36902A003852CB /* XXBRefreshFooterUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 625C75B21D36902A003852CB /* XXBRefreshFooterUIView.m */; };
 		629DB4C71CC090B800EC7FE1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 629DB4C61CC090B800EC7FE1 /* main.m */; };
 		629DB4CA1CC090B800EC7FE1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 629DB4C91CC090B800EC7FE1 /* AppDelegate.m */; };
 		629DB4CD1CC090B800EC7FE1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 629DB4CC1CC090B800EC7FE1 /* ViewController.m */; };
@@ -49,6 +50,8 @@
 		622759841CCDEF3100BDE61A /* XXBAutoRefreshFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XXBAutoRefreshFooterView.m; sourceTree = "<group>"; };
 		625C75AE1D36837D003852CB /* XXBAutoRefreshFooterUIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XXBAutoRefreshFooterUIView.h; sourceTree = "<group>"; };
 		625C75AF1D36837D003852CB /* XXBAutoRefreshFooterUIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XXBAutoRefreshFooterUIView.m; sourceTree = "<group>"; };
+		625C75B11D36902A003852CB /* XXBRefreshFooterUIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XXBRefreshFooterUIView.h; sourceTree = "<group>"; };
+		625C75B21D36902A003852CB /* XXBRefreshFooterUIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XXBRefreshFooterUIView.m; sourceTree = "<group>"; };
 		629DB4C21CC090B800EC7FE1 /* XXBRefreshDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XXBRefreshDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		629DB4C61CC090B800EC7FE1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		629DB4C81CC090B800EC7FE1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -133,6 +136,8 @@
 				E1B8D4BD1D35DC25000C6A22 /* XXBRefreshHeaderUIView.m */,
 				625C75AE1D36837D003852CB /* XXBAutoRefreshFooterUIView.h */,
 				625C75AF1D36837D003852CB /* XXBAutoRefreshFooterUIView.m */,
+				625C75B11D36902A003852CB /* XXBRefreshFooterUIView.h */,
+				625C75B21D36902A003852CB /* XXBRefreshFooterUIView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -332,6 +337,7 @@
 				629DB4CA1CC090B800EC7FE1 /* AppDelegate.m in Sources */,
 				622759801CCDEE7E00BDE61A /* XXBRefreshBaseView.m in Sources */,
 				629DB4C71CC090B800EC7FE1 /* main.m in Sources */,
+				625C75B31D36902A003852CB /* XXBRefreshFooterUIView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

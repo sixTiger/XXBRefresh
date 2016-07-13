@@ -59,6 +59,11 @@ typedef enum {
 @property (nonatomic, assign) UIEdgeInsets                  scrollViewOriginalInset;
 
 /**
+ *  是否正在显示
+ */
+@property (assign, nonatomic) BOOL                          show;
+
+/**
  *  预设相关属性
  */
 - (void)prepare NS_REQUIRES_SUPER;
