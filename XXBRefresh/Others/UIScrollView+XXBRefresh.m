@@ -9,6 +9,7 @@
 #import "UIScrollView+XXBRefresh.h"
 #import "XXBRefreshHeaderView.h"
 #import "XXBRefreshFooterView.h"
+#import "XXBRefreshHeaderUIView.h"
 #import <objc/runtime.h>
 
 @implementation UIScrollView (XXBRefresh)
@@ -34,6 +35,7 @@ static char XXBRefreshFooterViewKey;
 - (XXBRefreshBaseView *)header {
     return objc_getAssociatedObject(self, &XXBRefreshHeaderViewKey);
 }
+
 - (void)setFooter:(XXBRefreshBaseView *)footer {
     if(self.footer == footer) {
         return;
@@ -63,7 +65,7 @@ static char XXBRefreshFooterViewKey;
  */
 - (void)addHeaderWithTarget:(id)target action:(SEL)action {
     if(self.header == nil) {
-        XXBRefreshHeaderView *refreshHeaderView = [XXBRefreshHeaderView headerView];
+        XXBRefreshHeaderView *refreshHeaderView = [XXBRefreshHeaderUIView headerView];
         [self addSubview:refreshHeaderView];
         self.header = refreshHeaderView;
     }

@@ -42,7 +42,7 @@
     _tableView.rowHeight = 80;
     _tableView.delegate = self;
     _tableView.dataSource = self;
-    _tableView.contentInset = UIEdgeInsetsMake(150, 0, 150, 0);
+//    _tableView.contentInset = UIEdgeInsetsMake(150, 0, 150, 0);
     [_tableView addHeaderWithTarget:self action:@selector(headerRefresh)];
     [_tableView addFooterWithTarget:self action:@selector(footerRefresh)];
     XXBAutoRefreshFooterView *footer = [[XXBAutoRefreshFooterView alloc] initWithFrame:CGRectMake(0, 0, 100, 80)];

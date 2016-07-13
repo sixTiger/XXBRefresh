@@ -10,12 +10,14 @@
 #import "XXBRefreshConsts.h"
 #import "UIView+XXBExtension.h"
 #import "UIScrollView+XXBExtension.h"
+#import "XXBRefreshRseources.h"
 
 typedef enum {
     XXBRefreshStateDefault,         //默认状态
     XXBRefreshStatePulling ,        //松开就可以进入刷新状态
     XXBRefreshStateRefreshing,      //正在刷新状态
-    XXBRefreshStateWillRefreshing   //即将刷新状态
+    XXBRefreshStateWillRefreshing,  //即将刷新状态
+    XXBRefreshStateEndRefreshing    //刷新结束
 } XXBRefreshState;
 
 

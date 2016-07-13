@@ -67,6 +67,7 @@
     } else {
         if (self.refreshState == XXBRefreshStatePulling) {
             // 开始刷新
+            self.refreshState = XXBRefreshStateWillRefreshing;
             self.refreshState = XXBRefreshStateRefreshing;
         }
     }

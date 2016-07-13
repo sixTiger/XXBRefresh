@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		612D2311DA4DF54B4EEAFED6 /* libPods-XXBRefreshDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F2B5A14D569AF023A231C925 /* libPods-XXBRefreshDemo.a */; };
 		6227597C1CCDEE7E00BDE61A /* UIScrollView+XXBExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 6227596D1CCDEE7E00BDE61A /* UIScrollView+XXBExtension.m */; };
 		6227597D1CCDEE7E00BDE61A /* UIScrollView+XXBRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 6227596F1CCDEE7E00BDE61A /* UIScrollView+XXBRefresh.m */; };
 		6227597E1CCDEE7E00BDE61A /* UIView+XXBExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 622759711CCDEE7E00BDE61A /* UIView+XXBExtension.m */; };
@@ -21,7 +22,9 @@
 		629DB4D01CC090B800EC7FE1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 629DB4CE1CC090B800EC7FE1 /* Main.storyboard */; };
 		629DB4D21CC090B800EC7FE1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 629DB4D11CC090B800EC7FE1 /* Assets.xcassets */; };
 		629DB4D51CC090B800EC7FE1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 629DB4D31CC090B800EC7FE1 /* LaunchScreen.storyboard */; };
-		9AA6830E1F5DAB9D6EA2BAA7 /* libPods-XXBRefreshDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B8E2DF3371147E98BEF2B831 /* libPods-XXBRefreshDemo.a */; };
+		E1B8D4BE1D35DC25000C6A22 /* XXBRefreshHeaderUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = E1B8D4BD1D35DC25000C6A22 /* XXBRefreshHeaderUIView.m */; };
+		E1B8D4C31D35E9AE000C6A22 /* arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1B8D4C21D35E9AE000C6A22 /* arrow@2x.png */; };
+		E1B8D4C61D35E9D6000C6A22 /* XXBRefreshRseources.m in Sources */ = {isa = PBXBuildFile; fileRef = E1B8D4C51D35E9D6000C6A22 /* XXBRefreshRseources.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,7 +57,12 @@
 		629DB4D41CC090B800EC7FE1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		629DB4D61CC090B800EC7FE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A84947D46AE63AC69CF21957 /* Pods-XXBRefreshDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XXBRefreshDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XXBRefreshDemo/Pods-XXBRefreshDemo.debug.xcconfig"; sourceTree = "<group>"; };
-		B8E2DF3371147E98BEF2B831 /* libPods-XXBRefreshDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XXBRefreshDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1B8D4BC1D35DC25000C6A22 /* XXBRefreshHeaderUIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XXBRefreshHeaderUIView.h; sourceTree = "<group>"; };
+		E1B8D4BD1D35DC25000C6A22 /* XXBRefreshHeaderUIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XXBRefreshHeaderUIView.m; sourceTree = "<group>"; };
+		E1B8D4C21D35E9AE000C6A22 /* arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow@2x.png"; sourceTree = "<group>"; };
+		E1B8D4C41D35E9D6000C6A22 /* XXBRefreshRseources.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XXBRefreshRseources.h; sourceTree = "<group>"; };
+		E1B8D4C51D35E9D6000C6A22 /* XXBRefreshRseources.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XXBRefreshRseources.m; sourceTree = "<group>"; };
+		F2B5A14D569AF023A231C925 /* libPods-XXBRefreshDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XXBRefreshDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9AA6830E1F5DAB9D6EA2BAA7 /* libPods-XXBRefreshDemo.a in Frameworks */,
+				612D2311DA4DF54B4EEAFED6 /* libPods-XXBRefreshDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +89,7 @@
 		6227596A1CCDEE7E00BDE61A /* XXBRefresh */ = {
 			isa = PBXGroup;
 			children = (
+				E1B8D4C11D35E9AE000C6A22 /* Resources */,
 				6227596B1CCDEE7E00BDE61A /* Others */,
 				622759741CCDEE7E00BDE61A /* View */,
 				6227597B1CCDEE7E00BDE61A /* XXBRefresh.h */,
@@ -100,6 +109,8 @@
 				622759711CCDEE7E00BDE61A /* UIView+XXBExtension.m */,
 				622759721CCDEE7E00BDE61A /* XXBRefreshConsts.h */,
 				622759731CCDEE7E00BDE61A /* XXBRefreshConsts.m */,
+				E1B8D4C41D35E9D6000C6A22 /* XXBRefreshRseources.h */,
+				E1B8D4C51D35E9D6000C6A22 /* XXBRefreshRseources.m */,
 			);
 			path = Others;
 			sourceTree = "<group>";
@@ -115,6 +126,8 @@
 				6227597A1CCDEE7E00BDE61A /* XXBRefreshHeaderView.m */,
 				622759831CCDEF3100BDE61A /* XXBAutoRefreshFooterView.h */,
 				622759841CCDEF3100BDE61A /* XXBAutoRefreshFooterView.m */,
+				E1B8D4BC1D35DC25000C6A22 /* XXBRefreshHeaderUIView.h */,
+				E1B8D4BD1D35DC25000C6A22 /* XXBRefreshHeaderUIView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -165,9 +178,17 @@
 		B146D1EDC815537024125C80 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B8E2DF3371147E98BEF2B831 /* libPods-XXBRefreshDemo.a */,
+				F2B5A14D569AF023A231C925 /* libPods-XXBRefreshDemo.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E1B8D4C11D35E9AE000C6A22 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E1B8D4C21D35E9AE000C6A22 /* arrow@2x.png */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,12 +198,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 629DB4D91CC090B800EC7FE1 /* Build configuration list for PBXNativeTarget "XXBRefreshDemo" */;
 			buildPhases = (
-				2870A2F2F823C13D0DFF16BB /* Check Pods Manifest.lock */,
+				2870A2F2F823C13D0DFF16BB /* [CP] Check Pods Manifest.lock */,
 				629DB4BE1CC090B800EC7FE1 /* Sources */,
 				629DB4BF1CC090B800EC7FE1 /* Frameworks */,
 				629DB4C01CC090B800EC7FE1 /* Resources */,
-				43B71C5F9FF9626DCF71F6C4 /* Embed Pods Frameworks */,
-				D4D8258CDF40446C072A65BB /* Copy Pods Resources */,
+				43B71C5F9FF9626DCF71F6C4 /* [CP] Embed Pods Frameworks */,
+				D4D8258CDF40446C072A65BB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -231,6 +252,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				629DB4D51CC090B800EC7FE1 /* LaunchScreen.storyboard in Resources */,
+				E1B8D4C31D35E9AE000C6A22 /* arrow@2x.png in Resources */,
 				629DB4D21CC090B800EC7FE1 /* Assets.xcassets in Resources */,
 				629DB4D01CC090B800EC7FE1 /* Main.storyboard in Resources */,
 			);
@@ -239,14 +261,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2870A2F2F823C13D0DFF16BB /* Check Pods Manifest.lock */ = {
+		2870A2F2F823C13D0DFF16BB /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -254,14 +276,14 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		43B71C5F9FF9626DCF71F6C4 /* Embed Pods Frameworks */ = {
+		43B71C5F9FF9626DCF71F6C4 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -269,14 +291,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-XXBRefreshDemo/Pods-XXBRefreshDemo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D4D8258CDF40446C072A65BB /* Copy Pods Resources */ = {
+		D4D8258CDF40446C072A65BB /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -297,7 +319,9 @@
 				6227597D1CCDEE7E00BDE61A /* UIScrollView+XXBRefresh.m in Sources */,
 				6227597F1CCDEE7E00BDE61A /* XXBRefreshConsts.m in Sources */,
 				622759851CCDEF3100BDE61A /* XXBAutoRefreshFooterView.m in Sources */,
+				E1B8D4BE1D35DC25000C6A22 /* XXBRefreshHeaderUIView.m in Sources */,
 				629DB4CD1CC090B800EC7FE1 /* ViewController.m in Sources */,
+				E1B8D4C61D35E9D6000C6A22 /* XXBRefreshRseources.m in Sources */,
 				6227597E1CCDEE7E00BDE61A /* UIView+XXBExtension.m in Sources */,
 				629DB4CA1CC090B800EC7FE1 /* AppDelegate.m in Sources */,
 				622759801CCDEE7E00BDE61A /* XXBRefreshBaseView.m in Sources */,

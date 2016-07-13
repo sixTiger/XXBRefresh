@@ -30,4 +30,7 @@
     #import "NSData+Help.h"
     #import "NSArray+XXB.h"
     #import "NSDictionary+XXB.h"
+
+    #import "XXBTextField.h"
+    #import "XXBFPSLabel.h"
 #endif

@@ -24,4 +24,7 @@ Pod::Spec.new do |s|
     ss.source_files = 'XXBRefresh/View/*.{h,m}'
     ss.public_header_files = 'XXBRefresh/View/*.h'
   end
+  s.resource_bundles = {
+    'XXBRefresh' => ['XXBRefresh/Resources/*.png']
+  }
 end

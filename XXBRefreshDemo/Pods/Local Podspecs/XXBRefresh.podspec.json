@@ -17,6 +17,11 @@
   },
   "public_header_files": "XXBRefresh/XXBRefresh.h",
   "source_files": "XXBRefresh/XXBRefresh.h",
+  "resource_bundles": {
+    "XXBRefresh": [
+      "XXBRefresh/Resources/*.png"
+    ]
+  },
   "subspecs": [
     {
       "name": "Others",

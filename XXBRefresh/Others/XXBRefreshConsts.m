@@ -7,7 +7,10 @@
 //
 
 #import "XXBRefreshConsts.h"
-const CGFloat XXBRefreshViewHeight = 54;
+
+const CGFloat XXBRefreshMarginInset = 20;
+const CGFloat XXBRefreshMarginView = 5;
+const CGFloat XXBRefreshViewHeight = 64;
 const CGFloat XXBRefreshAnimationDuration = 0.25;
 const CGFloat XXBRefreshAnimationDurationSlow = 0.5;
 NSString *const XXBRefreshContentOffset = @"contentOffset";

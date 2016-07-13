@@ -74,6 +74,7 @@
     } else {
         if (self.refreshState == XXBRefreshStatePulling) {
             // 即将刷新 && 手松开
+            self.refreshState = XXBRefreshStateWillRefreshing;
             // 开始刷新
             self.refreshState = XXBRefreshStateRefreshing;
         }
@@ -95,9 +96,7 @@
             // 下拉可以刷新
             // 刷新完毕
             if (XXBRefreshStateRefreshing == oldState) {
-                [UIView animateWithDuration:XXBRefreshAnimationDurationSlow animations:^{
-                    self.scrollView.xxb_contentInsetTop -= self.xxb_height;
-                }];
+                
             } else {
                 
             }
@@ -117,6 +116,12 @@
                 
                 // 2.设置滚动位置
                 self.scrollView.xxb_contentOffsetY = - top;
+            }];
+            break;
+        }
+        case XXBRefreshStateEndRefreshing: {
+            [UIView animateWithDuration:XXBRefreshAnimationDurationSlow animations:^{
+                self.scrollView.xxb_contentInsetTop -= self.xxb_height;
             }];
             break;
         }

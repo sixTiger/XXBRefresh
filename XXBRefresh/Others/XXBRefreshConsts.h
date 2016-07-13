@@ -12,6 +12,15 @@
 // objc_msgSend
 #define msgSend(...) ((void (*)(void *, SEL, UIView *))objc_msgSend)(__VA_ARGS__)
 #define msgTarget(target) (__bridge void *)(target)
+/**
+ *  刷新控件的边距
+ */
+UIKIT_EXTERN const CGFloat XXBRefreshMarginInset;
+
+/**
+ *  控件之间的边距
+ */
+UIKIT_EXTERN const CGFloat XXBRefreshMarginView;
 
 /**
  *  刷新控件的默认高度

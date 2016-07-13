@@ -6,6 +6,9 @@
 //  Copyright © 2016年 xiaobing. All rights reserved.
 //
 
+/**
+ *  负责下拉刷新的逻辑处理
+ */
 #import "XXBRefreshBaseView.h"
 
 @interface XXBRefreshHeaderView : XXBRefreshBaseView
