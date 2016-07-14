@@ -80,10 +80,25 @@
     XXBRefreshState oldState = self.refreshState;
     [super setRefreshState:refreshState];
     switch (refreshState) {
+            
         case XXBRefreshStateDefault: {
             if (XXBRefreshStateRefreshing == oldState) {
                 
             }
+            break;
+        }
+            
+        case XXBRefreshStatePulling: {
+            // 松开可立即刷新
+            break;
+        }
+            
+        case XXBRefreshStateRefreshing: {
+            self.lastRefreshCount = [self totalDataCountInScrollView];
+            break;
+        }
+            
+        case XXBRefreshStateEndRefreshing: {
             CGFloat deltaH = [self heightForContentBreakView];
             // 刚刷新完毕 根据刷新后的数据情况确定时候滑动
             NSInteger currentCount = [self totalDataCountInScrollView];
@@ -92,15 +107,7 @@
                     self.scrollView.xxb_contentOffsetY = self.scrollView.xxb_contentSizeHeight - self.scrollView.xxb_height;
                 }];
             }
-            break;
-        }
-        case XXBRefreshStatePulling: {
-            // 松开可立即刷新
-            break;
-        }
-        case XXBRefreshStateRefreshing: {
-            self.lastRefreshCount = [self totalDataCountInScrollView];
-            break;
+
         }
         default:
             break;

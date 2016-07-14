@@ -118,6 +118,7 @@
             // 刷新完毕
             __weak typeof(self) weakSelf = self;
             if (XXBRefreshStateRefreshing == oldState) {
+//                self.scrollView.scrollEnabled = NO;
                 [UIView animateWithDuration:XXBRefreshAnimationDurationSlow animations:^{
                     __strong typeof(weakSelf) strongSelf = weakSelf;
                     strongSelf.scrollView.xxb_contentInsetBottom = strongSelf.scrollViewOriginalInset.bottom;
