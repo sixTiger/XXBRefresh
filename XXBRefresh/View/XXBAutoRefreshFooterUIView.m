@@ -46,19 +46,19 @@
     switch (refreshState) {
         case XXBRefreshStateDefault:
         {
-            self.messageLabel.text = @"上滑刷新";
+            self.messageLabel.text = XXBRefreshDropUp;
             break;
         }
         case XXBRefreshStateRefreshing:
         {
             [self.activityIndicatorView startAnimating];
-            self.messageLabel.text = @"正在刷新";
+            self.messageLabel.text = XXBRefreshing;
             break;
         }
         case XXBRefreshStateEndRefreshing:
         {
             [self.activityIndicatorView stopAnimating];
-            self.messageLabel.text = @"上滑刷新";
+            self.messageLabel.text = XXBRefreshDropUp;
             break;
         }
             

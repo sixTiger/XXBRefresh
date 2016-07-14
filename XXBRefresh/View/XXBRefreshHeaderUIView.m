@@ -170,7 +170,7 @@ static NSString *XXBRefreshHeaderUIViewLastRefreshTime = @"XXBRefreshHeaderUIVie
         case XXBRefreshStateDefault:
         {
             [self.activityIndicatorView stopAnimating];
-            self.messageLabel.text = @"下拉刷新";
+            self.messageLabel.text = XXBRefreshDropDown;
             // 执行动画
             [UIView animateWithDuration:XXBRefreshAnimationDuration animations:^{
                 self.activityImageView.transform = CGAffineTransformIdentity;
@@ -181,7 +181,7 @@ static NSString *XXBRefreshHeaderUIViewLastRefreshTime = @"XXBRefreshHeaderUIVie
         case XXBRefreshStatePulling:
         {
             [self.activityIndicatorView stopAnimating];
-            self.messageLabel.text = @"松开刷新";
+            self.messageLabel.text = XXBRefreshDropEnd;
             // 执行动画
             [UIView animateWithDuration:XXBRefreshAnimationDuration animations:^{
                 self.activityImageView.transform = CGAffineTransformMakeRotation(M_PI);
@@ -194,7 +194,7 @@ static NSString *XXBRefreshHeaderUIViewLastRefreshTime = @"XXBRefreshHeaderUIVie
                 self.activityImageView.alpha = 0.0;
             }];
             [self.activityIndicatorView startAnimating];
-            self.messageLabel.text = @"正在刷新";
+            self.messageLabel.text = XXBRefreshing;
             break;
         }
         case XXBRefreshStateEndRefreshing:
@@ -203,34 +203,34 @@ static NSString *XXBRefreshHeaderUIViewLastRefreshTime = @"XXBRefreshHeaderUIVie
                 self.activityImageView.alpha = 1.0;
             }];
             [self.activityIndicatorView startAnimating];
-            self.messageLabel.text = @"松开刷新";
+            self.messageLabel.text = XXBRefreshDropEnd;
             self.lastUpdateTime = [NSDate date];
             break;
         }
         case XXBRefreshStateWillRefreshing:
         {
             [self.activityIndicatorView stopAnimating];
-            self.messageLabel.text = @"松开刷新";
+            self.messageLabel.text = XXBRefreshDropEnd;
             break;
         }
         case XXBRefreshStateStartWillShow:
         {
             [self.activityIndicatorView stopAnimating];
-            self.messageLabel.text = @"下拉刷新";
+            self.messageLabel.text = XXBRefreshDropDown;
             [self updateTimeLabel];
             break;
         }
         case XXBRefreshStateStartWillHiden:
         {
             [self.activityIndicatorView stopAnimating];
-            self.messageLabel.text = @"下拉刷新";
+            self.messageLabel.text = XXBRefreshDropDown;
             break;
         }
             
         default:
         {
             [self.activityIndicatorView stopAnimating];
-            self.messageLabel.text = @"下拉刷新";
+            self.messageLabel.text = XXBRefreshDropDown;
         }
             break;
     }
