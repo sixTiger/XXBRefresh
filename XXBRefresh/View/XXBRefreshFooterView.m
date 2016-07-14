@@ -119,7 +119,8 @@
             __weak typeof(self) weakSelf = self;
             if (XXBRefreshStateRefreshing == oldState) {
                 [UIView animateWithDuration:XXBRefreshAnimationDurationSlow animations:^{
-                    self.scrollView.xxb_contentInsetBottom = self.scrollViewOriginalInset.bottom;
+                    __strong typeof(weakSelf) strongSelf = weakSelf;
+                    strongSelf.scrollView.xxb_contentInsetBottom = strongSelf.scrollViewOriginalInset.bottom;
                 } completion:^(BOOL finished) {
                     __strong typeof(weakSelf) strongSelf = weakSelf;
                     strongSelf.refreshState = XXBRefreshStateStartWillHiden;

@@ -22,6 +22,12 @@ static char XXBRefreshFooterViewKey;
     if(self.header == header) {
         return;
     }
+    
+    if ( header.beginRefreshingTaget == nil || header.beginRefreshingAction == nil) {
+        header.beginRefreshingAction = self.header.beginRefreshingAction;
+        header.beginRefreshingTaget = self.header.beginRefreshingTaget;
+    }
+    
     [self.header removeFromSuperview];
     [self willChangeValueForKey:@"XXBRefreshHeaderViewKey"];
     objc_setAssociatedObject(self, &XXBRefreshHeaderViewKey,

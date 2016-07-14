@@ -107,6 +107,7 @@
         }
         case XXBRefreshStateRefreshing:
         {
+            NSLog(@"++");
             // 正在刷新中
             // 执行动画
             [UIView animateWithDuration:XXBRefreshAnimationDuration animations:^{
@@ -122,14 +123,38 @@
         case XXBRefreshStateEndRefreshing:
         {
             __weak typeof(self) weakSelf = self;
+            self.scrollView.scrollEnabled = NO;
             [UIView animateWithDuration:XXBRefreshAnimationDurationSlow animations:^{
-                self.scrollView.xxb_contentInsetTop -= self.xxb_height;
+                __strong typeof(weakSelf) strongSelf = weakSelf;
+                strongSelf.scrollView.xxb_contentInsetTop -= self.xxb_height;
             } completion:^(BOOL finished) {
                 __strong typeof(weakSelf) strongSelf = weakSelf;
                 strongSelf.show = NO;
                 strongSelf.refreshState = XXBRefreshStateStartWillHiden;
                 strongSelf.refreshState = XXBRefreshStateDefault;
+                strongSelf.scrollView.scrollEnabled = YES;
             }];
+                    
+            
+            
+//            self.scrollView.scrollEnabled = NO;
+//            [UIView animateWithDuration:XXBRefreshAnimationDurationSlow animations:^{
+//                __strong typeof(weakSelf) strongSelf = weakSelf;
+//                [strongSelf.scrollView setContentOffset:CGPointZero];
+//            } completion:^(BOOL finished) {
+//                [UIView animateWithDuration:XXBRefreshAnimationDurationSlow animations:^{
+//                    __strong typeof(weakSelf) strongSelf = weakSelf;
+//                    strongSelf.scrollView.xxb_contentInsetTop -= self.xxb_height;
+//                } completion:^(BOOL finished) {
+//                    __strong typeof(weakSelf) strongSelf = weakSelf;
+//                    strongSelf.show = NO;
+//                    strongSelf.refreshState = XXBRefreshStateStartWillHiden;
+//                    strongSelf.refreshState = XXBRefreshStateDefault;
+//                    strongSelf.scrollView.scrollEnabled = YES;
+//                }];
+//                
+//            }];
+            
             break;
         }
         default:

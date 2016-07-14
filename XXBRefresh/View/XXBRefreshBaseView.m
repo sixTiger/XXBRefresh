@@ -97,7 +97,6 @@
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(XXBRefreshAnimationDuration * NSEC_PER_SEC));
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
         self.refreshState = XXBRefreshStateEndRefreshing;
-        self.refreshState = XXBRefreshStateDefault;
     });
 }
 

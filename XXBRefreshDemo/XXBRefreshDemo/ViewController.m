@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "XXBRefresh.h"
+#import "XXBRefreshHeaderPicView.h"
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic , strong) UITableView           *tableView;
@@ -48,8 +49,12 @@
     XXBAutoRefreshFooterUIView *footer = [[XXBAutoRefreshFooterUIView alloc] initWithFrame:CGRectMake(0, 0, 100, 80)];
     footer.triggerAutoRefreshMarginBottom  = 1;
 //    _tableView.footer = footer;
-    _tableView.footer.backgroundColor = [UIColor redColor];
+//    _tableView.footer.backgroundColor = [UIColor redColor];
 //    _tableView.header.backgroundColor = [UIColor blueColor];
+    
+    
+    XXBRefreshHeaderPicView *refreshHeaderPicView = [[XXBRefreshHeaderPicView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 64)];
+    _tableView.header = refreshHeaderPicView;
     
 }
 

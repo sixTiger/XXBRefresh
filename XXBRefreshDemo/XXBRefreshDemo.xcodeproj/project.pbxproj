@@ -24,6 +24,7 @@
 		629DB4D01CC090B800EC7FE1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 629DB4CE1CC090B800EC7FE1 /* Main.storyboard */; };
 		629DB4D21CC090B800EC7FE1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 629DB4D11CC090B800EC7FE1 /* Assets.xcassets */; };
 		629DB4D51CC090B800EC7FE1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 629DB4D31CC090B800EC7FE1 /* LaunchScreen.storyboard */; };
+		E11E22801D37716B003790B1 /* XXBRefreshHeaderPicView.m in Sources */ = {isa = PBXBuildFile; fileRef = E11E227F1D37716B003790B1 /* XXBRefreshHeaderPicView.m */; };
 		E1B8D4BE1D35DC25000C6A22 /* XXBRefreshHeaderUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = E1B8D4BD1D35DC25000C6A22 /* XXBRefreshHeaderUIView.m */; };
 		E1B8D4C31D35E9AE000C6A22 /* arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1B8D4C21D35E9AE000C6A22 /* arrow@2x.png */; };
 		E1B8D4C61D35E9D6000C6A22 /* XXBRefreshRseources.m in Sources */ = {isa = PBXBuildFile; fileRef = E1B8D4C51D35E9D6000C6A22 /* XXBRefreshRseources.m */; };
@@ -63,6 +64,8 @@
 		629DB4D41CC090B800EC7FE1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		629DB4D61CC090B800EC7FE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A84947D46AE63AC69CF21957 /* Pods-XXBRefreshDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XXBRefreshDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XXBRefreshDemo/Pods-XXBRefreshDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		E11E227E1D37716B003790B1 /* XXBRefreshHeaderPicView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XXBRefreshHeaderPicView.h; sourceTree = "<group>"; };
+		E11E227F1D37716B003790B1 /* XXBRefreshHeaderPicView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XXBRefreshHeaderPicView.m; sourceTree = "<group>"; };
 		E1B8D4BC1D35DC25000C6A22 /* XXBRefreshHeaderUIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XXBRefreshHeaderUIView.h; sourceTree = "<group>"; };
 		E1B8D4BD1D35DC25000C6A22 /* XXBRefreshHeaderUIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XXBRefreshHeaderUIView.m; sourceTree = "<group>"; };
 		E1B8D4C21D35E9AE000C6A22 /* arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow@2x.png"; sourceTree = "<group>"; };
@@ -173,6 +176,8 @@
 				629DB4D31CC090B800EC7FE1 /* LaunchScreen.storyboard */,
 				629DB4D61CC090B800EC7FE1 /* Info.plist */,
 				629DB4C51CC090B800EC7FE1 /* Supporting Files */,
+				E11E227E1D37716B003790B1 /* XXBRefreshHeaderPicView.h */,
+				E11E227F1D37716B003790B1 /* XXBRefreshHeaderPicView.m */,
 			);
 			path = XXBRefreshDemo;
 			sourceTree = "<group>";
@@ -328,6 +333,7 @@
 				6227597C1CCDEE7E00BDE61A /* UIScrollView+XXBExtension.m in Sources */,
 				625C75B01D36837D003852CB /* XXBAutoRefreshFooterUIView.m in Sources */,
 				6227597D1CCDEE7E00BDE61A /* UIScrollView+XXBRefresh.m in Sources */,
+				E11E22801D37716B003790B1 /* XXBRefreshHeaderPicView.m in Sources */,
 				6227597F1CCDEE7E00BDE61A /* XXBRefreshConsts.m in Sources */,
 				622759851CCDEF3100BDE61A /* XXBAutoRefreshFooterView.m in Sources */,
 				E1B8D4BE1D35DC25000C6A22 /* XXBRefreshHeaderUIView.m in Sources */,
