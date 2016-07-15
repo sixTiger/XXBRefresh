@@ -132,5 +132,7 @@
 }
 
 - (void)scrollViewContentSizeDidChange:(NSDictionary *)change {
+    self.xxb_x = 0;
+    self.xxb_width = self.superview.xxb_width;
 }
 @end
