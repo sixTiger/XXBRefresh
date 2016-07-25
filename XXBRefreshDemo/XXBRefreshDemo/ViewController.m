@@ -43,6 +43,7 @@
     _tableView.rowHeight = 80;
     _tableView.delegate = self;
     _tableView.dataSource = self;
+    _tableView.autoresizingMask = (1 << 6) - 1;
 //    _tableView.contentInset = UIEdgeInsetsMake(150, 0, 150, 0);
     [_tableView addHeaderWithTarget:self action:@selector(headerRefresh)];
     [_tableView addFooterWithTarget:self action:@selector(footerRefresh)];
