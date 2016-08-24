@@ -71,7 +71,7 @@ typedef enum {
 /**
  *  开始刷新
  */
-- (void)beginRefreshing NS_REQUIRES_SUPER;
+- (void)beginRefreshing ;
 
 /**
  *  结束刷新

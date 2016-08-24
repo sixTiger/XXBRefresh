@@ -149,4 +149,23 @@
         return - self.scrollViewOriginalInset.top;
     }
 }
+- (void)beginRefreshing {
+    if (self.refreshState == XXBRefreshStateRefreshing) {
+        // 回调
+        if ([self.beginRefreshingTaget respondsToSelector:self.beginRefreshingAction] && self.autoCallRefresh) {
+            msgSend(msgTarget(self.beginRefreshingTaget), self.beginRefreshingAction, self);
+        }
+        
+    } else {
+        
+        self.refreshState = XXBRefreshStateStartWillShow;
+        self.refreshState = XXBRefreshStateWillRefreshing;
+        if (self.window) {
+            self.refreshState = XXBRefreshStateRefreshing;
+        } else {
+            [self setNeedsDisplay];
+        }
+    }
+    
+}
 @end
