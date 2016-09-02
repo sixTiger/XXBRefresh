@@ -182,7 +182,7 @@ static NSString *XXBRefreshFooterUIViewLastRefreshTime = @"XXBRefreshFooterUIVie
         case XXBRefreshStatePulling:
         {
             [self.activityIndicatorView stopAnimating];
-            self.messageLabel.text = XXBRefreshDropEnd;
+            self.messageLabel.text = XXBFooterRefreshDropEnd;
             // 执行动画
             [UIView animateWithDuration:XXBRefreshAnimationDuration animations:^{
                 self.activityImageView.transform = CGAffineTransformIdentity;
@@ -195,7 +195,7 @@ static NSString *XXBRefreshFooterUIViewLastRefreshTime = @"XXBRefreshFooterUIVie
                 self.activityImageView.alpha = 0.0;
             }];
             [self.activityIndicatorView startAnimating];
-            self.messageLabel.text = XXBRefreshing;
+            self.messageLabel.text = XXBFooterRefreshing;
             break;
         }
         case XXBRefreshStateEndRefreshing:
@@ -204,14 +204,14 @@ static NSString *XXBRefreshFooterUIViewLastRefreshTime = @"XXBRefreshFooterUIVie
                 self.activityImageView.alpha = 1.0;
             }];
             [self.activityIndicatorView startAnimating];
-            self.messageLabel.text = XXBRefreshDropEnd;
+            self.messageLabel.text = XXBFooterRefreshDropEnd;
             self.lastUpdateTime = [NSDate date];
             break;
         }
         case XXBRefreshStateWillRefreshing:
         {
             [self.activityIndicatorView stopAnimating];
-            self.messageLabel.text = XXBRefreshDropEnd;
+            self.messageLabel.text = XXBFooterRefreshDropEnd;
             break;
         }
         case XXBRefreshStateStartWillShow:

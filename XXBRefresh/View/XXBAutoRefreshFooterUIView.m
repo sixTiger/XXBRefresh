@@ -52,7 +52,7 @@
         case XXBRefreshStateRefreshing:
         {
             [self.activityIndicatorView startAnimating];
-            self.messageLabel.text = XXBRefreshing;
+            self.messageLabel.text = XXBHeaderRefreshing;
             break;
         }
         case XXBRefreshStateEndRefreshing:

@@ -53,17 +53,25 @@ UIKIT_EXTERN NSString *const XXBRefreshContentSize;
  */
 UIKIT_EXTERN NSString *const XXBRefreshDropDown;
 /**
- *  上拉刷新
+ *  上拉加载更多
  */
 UIKIT_EXTERN NSString *const XXBRefreshDropUp;
 /**
  *  松开刷新
  */
-UIKIT_EXTERN NSString *const XXBRefreshDropEnd;
+UIKIT_EXTERN NSString *const XXBHeaderRefreshDropEnd;
+/**
+ *  松开加载更多
+ */
+UIKIT_EXTERN NSString *const XXBFooterRefreshDropEnd;
 /**
  *  正在刷新
  */
-UIKIT_EXTERN NSString *const XXBRefreshing;
+UIKIT_EXTERN NSString *const XXBHeaderRefreshing;
+/**
+ *  正在刷新
+ */
+UIKIT_EXTERN NSString *const XXBFooterRefreshing;
 
 
 

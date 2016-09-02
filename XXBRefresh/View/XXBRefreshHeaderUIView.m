@@ -39,7 +39,7 @@ static NSString *XXBRefreshHeaderUIViewLastRefreshTime = @"XXBRefreshHeaderUIVie
     self.messageLabel.xxb_y = self.lastRefreshTimeLabel.xxb_y + self.lastRefreshTimeLabel.xxb_height + XXBRefreshMarginView;
     self.messageLabel.xxb_width = self.xxb_width - 2 * XXBRefreshMarginInset;
     //    self.messageLabel.center = CGPointMake(self.xxb_width * 0.5, self.xxb_height * 0.5);
-    self.activityImageView.xxb_x = XXBRefreshMarginInset ;
+    self.activityImageView.xxb_x = self.xxb_width * 0.5 - 85; ;
     self.activityImageView.xxb_y = (self.xxb_height - self.activityImageView.xxb_height) * 0.5;
     self.activityIndicatorView.frame = self.activityImageView.frame;
     
@@ -181,7 +181,7 @@ static NSString *XXBRefreshHeaderUIViewLastRefreshTime = @"XXBRefreshHeaderUIVie
         case XXBRefreshStatePulling:
         {
             [self.activityIndicatorView stopAnimating];
-            self.messageLabel.text = XXBRefreshDropEnd;
+            self.messageLabel.text = XXBHeaderRefreshDropEnd;
             // 执行动画
             [UIView animateWithDuration:XXBRefreshAnimationDuration animations:^{
                 self.activityImageView.transform = CGAffineTransformMakeRotation(M_PI);
@@ -194,7 +194,7 @@ static NSString *XXBRefreshHeaderUIViewLastRefreshTime = @"XXBRefreshHeaderUIVie
                 self.activityImageView.alpha = 0.0;
             }];
             [self.activityIndicatorView startAnimating];
-            self.messageLabel.text = XXBRefreshing;
+            self.messageLabel.text = XXBHeaderRefreshing;
             break;
         }
         case XXBRefreshStateEndRefreshing:
@@ -203,14 +203,14 @@ static NSString *XXBRefreshHeaderUIViewLastRefreshTime = @"XXBRefreshHeaderUIVie
                 self.activityImageView.alpha = 1.0;
             }];
             [self.activityIndicatorView startAnimating];
-            self.messageLabel.text = XXBRefreshDropEnd;
+            self.messageLabel.text = XXBHeaderRefreshDropEnd;
             self.lastUpdateTime = [NSDate date];
             break;
         }
         case XXBRefreshStateWillRefreshing:
         {
             [self.activityIndicatorView stopAnimating];
-            self.messageLabel.text = XXBRefreshDropEnd;
+            self.messageLabel.text = XXBHeaderRefreshDropEnd;
             break;
         }
         case XXBRefreshStateStartWillShow:

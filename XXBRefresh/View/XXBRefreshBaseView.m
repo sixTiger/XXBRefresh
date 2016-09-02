@@ -30,6 +30,16 @@
     return self;
 }
 
+- (void)drawRect:(CGRect)rect
+{
+    [super drawRect:rect];
+    
+    if (self.refreshState == XXBRefreshStateWillRefreshing) {
+        // 预防view还没显示出来就调用了beginRefreshing
+        self.refreshState = XXBRefreshStateRefreshing;
+    }
+}
+
 - (void)prepare {
     self.refreshState = XXBRefreshStateDefault;
 }
@@ -87,6 +97,8 @@
         if (self.window) {
             self.refreshState = XXBRefreshStateRefreshing;
         } else {
+            // 还没有显示
+            _refreshState = XXBRefreshStateWillRefreshing;
             [self setNeedsDisplay];
         }
     }

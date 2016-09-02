@@ -44,16 +44,16 @@
     _tableView.delegate = self;
     _tableView.dataSource = self;
     _tableView.autoresizingMask = (1 << 6) - 1;
-//    _tableView.contentInset = UIEdgeInsetsMake(150, 0, 150, 0);
+    _tableView.contentInset = UIEdgeInsetsMake(150, 0, 150, 0);
     [_tableView addHeaderWithTarget:self action:@selector(headerRefresh)];
     [_tableView addFooterWithTarget:self action:@selector(footerRefresh)];
-    XXBAutoRefreshFooterUIView *footer = [[XXBAutoRefreshFooterUIView alloc] initWithFrame:CGRectMake(0, 0, 100, 80)];
-    footer.triggerAutoRefreshMarginBottom  = 1;
-    _tableView.footer = footer;
+//    XXBAutoRefreshFooterUIView *footer = [[XXBAutoRefreshFooterUIView alloc] initWithFrame:CGRectMake(0, 0, 100, 80)];
+//    footer.triggerAutoRefreshMarginBottom  = 1;
+//    _tableView.footer = footer;
     
     
-    XXBRefreshHeaderPicView *refreshHeaderPicView = [[XXBRefreshHeaderPicView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 64)];
-    _tableView.header = refreshHeaderPicView;
+//    XXBRefreshHeaderPicView *refreshHeaderPicView = [[XXBRefreshHeaderPicView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 64)];
+//    _tableView.header = refreshHeaderPicView;
     
 }
 

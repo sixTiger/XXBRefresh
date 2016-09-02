@@ -107,7 +107,6 @@
         }
         case XXBRefreshStateRefreshing:
         {
-            NSLog(@"++");
             // 正在刷新中
             // 执行动画
             [UIView animateWithDuration:XXBRefreshAnimationDuration animations:^{

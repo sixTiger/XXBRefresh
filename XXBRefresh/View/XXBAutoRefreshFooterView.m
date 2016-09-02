@@ -4,7 +4,7 @@
 //
 //  Created by xiaobing on 16/4/25.
 //  Copyright © 2016年 xiaobing. All rights reserved.
-//
+//  https://github.com/sixTiger/XXBRefresh
 
 #import "XXBAutoRefreshFooterView.h"
 
