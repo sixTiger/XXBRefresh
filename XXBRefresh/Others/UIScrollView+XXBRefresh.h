@@ -11,8 +11,14 @@
 
 @interface UIScrollView (XXBRefresh)
 
+/**
+ *  下拉刷新的头部
+ */
 @property (weak, nonatomic) XXBRefreshBaseView    *header;
 
+/**
+ *  上拉加载更多的底部
+ */
 @property (weak, nonatomic) XXBRefreshBaseView      *footer;
 #pragma mark - 下拉刷新
 /**
