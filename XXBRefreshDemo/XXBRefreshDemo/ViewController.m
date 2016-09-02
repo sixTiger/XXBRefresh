@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "XXBRefresh.h"
 #import "XXBRefreshHeaderPicView.h"
+#import "XXBLibs.h"
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic , strong) UITableView           *tableView;
@@ -44,7 +45,7 @@
     _tableView.delegate = self;
     _tableView.dataSource = self;
     _tableView.autoresizingMask = (1 << 6) - 1;
-    _tableView.contentInset = UIEdgeInsetsMake(150, 0, 150, 0);
+//    _tableView.contentInset = UIEdgeInsetsMake(150, 0, 150, 0);
     [_tableView addHeaderWithTarget:self action:@selector(headerRefresh)];
     [_tableView addFooterWithTarget:self action:@selector(footerRefresh)];
 //    XXBAutoRefreshFooterUIView *footer = [[XXBAutoRefreshFooterUIView alloc] initWithFrame:CGRectMake(0, 0, 100, 80)];
@@ -59,7 +60,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
-    cell.backgroundColor = [UIColor colorWithRed:arc4random_uniform(255)/255.0 green:arc4random_uniform(255)/255.0 blue:arc4random_uniform(255)/255.0 alpha:1.0];
+    cell.backgroundColor = [UIColor myRandomColor];
     cell.textLabel.textAlignment = NSTextAlignmentCenter;
     cell.textLabel.text = self.dataSouceArray[indexPath.row];
     return cell;
