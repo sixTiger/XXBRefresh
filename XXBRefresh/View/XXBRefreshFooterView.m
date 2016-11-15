@@ -39,7 +39,7 @@
 - (void)scrollViewContentSizeDidChange:(NSDictionary *)change {
     [super scrollViewContentSizeDidChange:change];
     CGFloat contentHeight = self.scrollView.xxb_contentSizeHeight ;
-    CGFloat scrollHeight = self.scrollView.xxb_height - self.scrollViewOriginalInset.top - self.scrollViewOriginalInset.bottom + self.scrollView.xxb_contentInsetBottom;
+    CGFloat scrollHeight = self.scrollView.xxb_height - self.scrollViewOriginalInset.top - self.scrollViewOriginalInset.bottom;
     // 设置位置和尺寸
     self.xxb_y = MAX(contentHeight, scrollHeight);
     if (self.allowContentInset) {

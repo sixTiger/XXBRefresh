@@ -22,6 +22,9 @@ static char XXBRefreshFooterViewKey;
     if(self.header == header) {
         return;
     }
+    if (header == nil) {
+        [self.header endRefreshing];
+    }
     
     if ( header.beginRefreshingTaget == nil || header.beginRefreshingAction == nil) {
         header.beginRefreshingAction = self.header.beginRefreshingAction;
@@ -44,6 +47,9 @@ static char XXBRefreshFooterViewKey;
 - (void)setFooter:(XXBRefreshBaseView *)footer {
     if(self.footer == footer) {
         return;
+    }
+    if (footer == nil) {
+        [self.footer endRefreshing];
     }
     if ( footer.beginRefreshingTaget == nil || footer.beginRefreshingAction == nil) {
         footer.beginRefreshingAction = self.footer.beginRefreshingAction;

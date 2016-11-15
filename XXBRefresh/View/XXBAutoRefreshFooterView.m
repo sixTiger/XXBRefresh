@@ -70,6 +70,9 @@
             }
             [self beginRefreshing];
         }
+    } else {
+        //没有铺满一屏的话直接调用加载更多方法
+        [self beginRefreshing];
     }
 }
 
@@ -151,7 +154,7 @@
 }
 - (void)beginRefreshing {
     if (self.refreshState == XXBRefreshStateRefreshing) {
-        // 回调
+        // 当前的状态不是正在刷新的话回调
         if ([self.beginRefreshingTaget respondsToSelector:self.beginRefreshingAction] && self.autoCallRefresh) {
             msgSend(msgTarget(self.beginRefreshingTaget), self.beginRefreshingAction, self);
         }
