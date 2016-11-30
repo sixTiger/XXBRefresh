@@ -240,6 +240,8 @@
 				TargetAttributes = {
 					629DB4C11CC090B800EC7FE1 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = USZUZCA5NW;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -456,11 +458,14 @@
 			baseConfigurationReference = A84947D46AE63AC69CF21957 /* Pods-XXBRefreshDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = USZUZCA5NW;
 				INFOPLIST_FILE = XXBRefreshDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xiaoxiaobing.XXBRefreshDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "fdc4d874-0372-4e8b-a87b-fc09e8549a55";
+				PROVISIONING_PROFILE_SPECIFIER = common;
 			};
 			name = Debug;
 		};
@@ -469,11 +474,14 @@
 			baseConfigurationReference = 55356E7A70C1195237CCCBBD /* Pods-XXBRefreshDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = USZUZCA5NW;
 				INFOPLIST_FILE = XXBRefreshDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xiaoxiaobing.XXBRefreshDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "fdc4d874-0372-4e8b-a87b-fc09e8549a55";
+				PROVISIONING_PROFILE_SPECIFIER = common;
 			};
 			name = Release;
 		};

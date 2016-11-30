@@ -13,6 +13,7 @@
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic , strong) UITableView           *tableView;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property(nonatomic , strong) NSMutableArray        *dataSouceArray;
 @end
 
@@ -25,6 +26,22 @@
     [self _creatTableView];
 }
 
+- (UIImage *)captureScrollView:(UIScrollView *)scrollView {
+    CGPoint savedContentOffset = scrollView.contentOffset;
+    CGRect savedFrame = scrollView.frame;
+    //设置控件显示的区域大小
+    scrollView.frame = CGRectMake( 0, 0, scrollView.contentSize.width, scrollView.contentSize.height);
+    //设置截屏大小(截屏区域的大小必须要跟视图控件的大小一样)
+    UIGraphicsBeginImageContextWithOptions(scrollView.contentSize, YES, 0.0);
+    [[scrollView layer] renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage *viewImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    scrollView.contentOffset = savedContentOffset;
+    scrollView.frame = savedFrame;
+    return viewImage;
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -32,7 +49,7 @@
 
 - (void)_initData {
     _dataSouceArray = [NSMutableArray array];
-    for (int i = 0; i < 10; i++) {
+    for (int i = 0; i < 20; i++) {
         [_dataSouceArray addObject:[NSString stringWithFormat:@"cell >>> %@",@(_dataSouceArray.count)]];
     }
 }
@@ -55,7 +72,7 @@
     
 //    XXBRefreshHeaderPicView *refreshHeaderPicView = [[XXBRefreshHeaderPicView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 64)];
 //    _tableView.header = refreshHeaderPicView;
-    
+    [self.view bringSubviewToFront:self.imageView];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -77,15 +94,25 @@
     NSLog(@"下拉刷新了");
 }
 - (void)footerRefresh {
-    
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         NSInteger count = self.dataSouceArray.count;
-        
-        for (NSInteger i = count; i < count + 5; i++) {
-            [_dataSouceArray addObject:[NSString stringWithFormat:@"cell >>> %@",@(_dataSouceArray.count)]];
-            [self.tableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:count inSection:0]] withRowAnimation:UITableViewRowAnimationBottom];
+        if(count >= 50) {
+            [self.tableView footerEndRefreshing];
+            self.tableView.footer = nil;
+        } else {
+            for (NSInteger i = count; i < count + 5; i++) {
+                [_dataSouceArray addObject:[NSString stringWithFormat:@"cell >>> %@",@(_dataSouceArray.count)]];
+                [self.tableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:count inSection:0]] withRowAnimation:UITableViewRowAnimationBottom];
+            }
         }
         [self.tableView footerEndRefreshing];
     });
 }
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    self.imageView.image = [self captureScrollView:self.tableView];
+}
+
+
 @end
